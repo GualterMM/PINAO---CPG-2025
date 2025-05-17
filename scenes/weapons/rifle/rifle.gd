@@ -1,6 +1,8 @@
 extends Node3D
 
 signal ammo_changed(current: int, max: int)
+signal reloading_started(total_time: float)
+signal reloading_ended()
 
 @onready var muzzle = $Muzzle;
 @onready var rof_timer: Timer = $Timer;
@@ -70,6 +72,7 @@ func _on_reload_timer_timeout() -> void:
 	is_reloading = false
 	can_shoot = true
 	emit_ammo_update()
+	emit_signal("reloading_ended")
 	
 func get_random_spread_direction(forward: Vector3, max_angle_deg: float) -> Vector3:
 	var max_angle_rad = deg_to_rad(max_angle_deg)
@@ -91,12 +94,14 @@ func reload():
 	is_reloading = true
 	can_shoot = false
 	reload_timer.start()
+	emit_signal("reloading_started", reload_time)
 	
 func cancel_reload():
 	if reload_timer.is_stopped():
 		return
 	reload_timer.stop()
 	is_reloading = false
+	emit_signal("reloading_ended")
 
 func emit_ammo_update():
 	emit_signal("ammo_changed", current_ammo, ammo_capacity)

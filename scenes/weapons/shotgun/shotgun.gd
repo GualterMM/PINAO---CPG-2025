@@ -1,6 +1,8 @@
 extends Node3D
 
 signal ammo_changed(current: int, max: int)
+signal reloading_started(total_time: float)
+signal reloading_ended()
 
 @onready var muzzle = $Muzzle;
 @onready var rof_timer: Timer = $Timer;
@@ -17,7 +19,7 @@ enum Faction {
 @export var muzzle_speed: int = 30
 @export var seconds_between_shots: float = 0.5
 @export var bullet_despawn_time: float
-@export var ammo_capacity: int = 4
+@export var ammo_capacity: int = 6
 @export var reload_time: float = 3 # Seconds
 @export var num_pellets: int = 5;
 @export var spread_angle_degrees: float = 10.0
@@ -94,6 +96,7 @@ func reload():
 	is_reloading = true
 	can_shoot = false
 	reload_timer.start()
+	emit_signal("reloading_started", reload_time)
 	
 func cancel_reload():
 	if reload_timer.is_stopped():
@@ -102,6 +105,7 @@ func cancel_reload():
 	reload_timer.stop()
 	is_reloading = false
 	can_shoot = true
+	emit_signal("reloading_ended")
 
 func _on_timer_timeout() -> void:
 	can_shoot = true;
@@ -111,6 +115,7 @@ func _on_reload_timer_timeout() -> void:
 	is_reloading = false
 	can_shoot = true
 	emit_ammo_update()
+	emit_signal("reloading_ended")
 	
 func emit_ammo_update():
 	emit_signal("ammo_changed", current_ammo, ammo_capacity)
