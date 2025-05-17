@@ -21,8 +21,6 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-collision_layer = 2
-collision_mask = 21
 script = ExtResource("1_dovo2")
 metadata/_edit_group_ = true
 
@@ -54,3 +52,4 @@ shotgun_scene = ExtResource("4_p47bc")
 rifle_scene = ExtResource("5_p47bc")
 
 [node name="DamageController" parent="." instance=ExtResource("6_75vfm")]
+max_health_points = 10.0

@@ -16,8 +16,6 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lq62i"]
 
 [node name="Melee Enemy" type="CharacterBody3D"]
-collision_layer = 4
-collision_mask = 15
 script = ExtResource("1_df7kv")
 speed = 11.0
 
@@ -38,5 +36,6 @@ shape = SubResource("CapsuleShape3D_lq62i")
 debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_lq62i")]
+max_health_points = 6.0
 
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]
