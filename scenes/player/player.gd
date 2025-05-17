@@ -14,6 +14,7 @@ var target_velocity := Vector3.ZERO;
 
 func _ready() -> void:
 	damage_controller.death_signal.connect(_on_death)
+	# damage_controller.health_changed.connect(_on_health_changed)
 
 func _physics_process(delta: float) -> void:
 	_move(delta);

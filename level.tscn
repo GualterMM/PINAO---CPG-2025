@@ -22,6 +22,7 @@ albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
 [node name="Level" type="Node3D"]
 
 [node name="User Interface" parent="." instance=ExtResource("1_oi3di")]
+player_path = NodePath("../Player Layer/Player")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.840973, 0.349502, -0.413053, 0, 0.76339, 0.645938, 0.541077, -0.543216, 0.641991, -1.48424, 11.4664, 5.83168)
@@ -101,9 +102,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0.5)
 use_collision = true
 size = Vector3(60, 1, 60)
 
-[node name="Player Layer" type="Node" parent="Environment"]
+[node name="Player Layer" type="Node" parent="."]
 
-[node name="Player" parent="Environment/Player Layer" instance=ExtResource("1_u52ul")]
+[node name="Player" parent="Player Layer" instance=ExtResource("1_u52ul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Enemies Layer" type="Node" parent="."]

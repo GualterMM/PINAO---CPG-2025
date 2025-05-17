@@ -1,9 +1,12 @@
 extends Control
 
-@onready var ammo_label: Label = $"HBoxContainer/VBoxContainer/Panel/Ammo Label"
+@export var player_path: NodePath
 
+@onready var ammo_label: Label = $"HBoxContainer/VBoxContainer/Panel/Ammo Label"
 @onready var reloading_bar: ProgressBar = $"HBoxContainer/VBoxContainer/Reloading Panel/Reload Bar"
 @onready var reload_panel: Panel = $"HBoxContainer/VBoxContainer/Reloading Panel"
+@onready var player_damage_controller: DamageController = get_node(player_path).get_node("DamageController")
+@onready var health_points_label: Label = $"HBoxContainer/Left Side/HBoxContainer/Panel/Health Points"
 
 var reload_timer: Timer
 var reload_total_time: float
@@ -16,6 +19,7 @@ func _process(delta: float) -> void:
 		update_reload_bar(fraction)
 		
 func _ready() -> void:
+	player_damage_controller.health_changed.connect(_on_health_changed)
 	reload_panel.hide()
 	reloading_bar.hide()
 
@@ -50,3 +54,9 @@ func _on_reload_started(total_time: float) -> void:
 func _on_reload_ended() -> void:
 	reload_panel.hide()
 	reloading_bar.hide()
+	
+func _on_health_changed(current: float, max: float):
+	if(current <= 0):
+		health_points_label.text = "Dead"
+	else:
+		health_points_label.text = "HP: %d/%d" % [current, max]

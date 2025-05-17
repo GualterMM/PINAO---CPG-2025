@@ -53,3 +53,4 @@ rifle_scene = ExtResource("5_p47bc")
 
 [node name="DamageController" parent="." instance=ExtResource("6_75vfm")]
 max_health_points = 10.0
+is_player = true
