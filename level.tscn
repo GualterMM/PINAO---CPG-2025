@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://clvskixc2dnuk"]
+[gd_scene load_steps=10 format=3 uid="uid://clvskixc2dnuk"]
 
+[ext_resource type="PackedScene" uid="uid://b1h44yr66wwyu" path="res://scenes/ui/user_interface.tscn" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cm8180w2tuiho" path="res://scenes/player/player.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://dsv16wi6de16d" path="res://scenes/controllers/enemy_spawn_controller.tscn" id="6_1ainy"]
 
@@ -19,6 +20,8 @@ albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0b4ue"]
 
 [node name="Level" type="Node3D"]
+
+[node name="User Interface" parent="." instance=ExtResource("1_oi3di")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.840973, 0.349502, -0.413053, 0, 0.76339, 0.645938, 0.541077, -0.543216, 0.641991, -1.48424, 11.4664, 5.83168)

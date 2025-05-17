@@ -10,8 +10,11 @@ var equipped_weapon: Node3D;
 var weapon_inventory: Dictionary = {}
 var weapon_order: Array[String] = ["pistol", "shotgun", "rifle"]
 var current_weapon_index: int = 0
+var ammo_ui: Control
 
 func _ready() -> void:
+	ammo_ui = get_tree().get_root().find_child("User Interface", true, false)
+	
 	# Instantiate and store weapons
 	if (pistol_scene):
 		weapon_inventory["pistol"] = pistol_scene.instantiate()
@@ -35,9 +38,9 @@ func equip_weapon(weapon_name: String):
 	if (new_weapon.get_parent() != hand):
 		hand.add_child(new_weapon)
 	
-	print("Children in hand: ", hand.get_children())
-	
 	equipped_weapon = new_weapon
+	
+	ammo_ui.connect_weapon(equipped_weapon)
 	
 func switch_weapon(delta: int) -> void:
 	current_weapon_index = wrapi(current_weapon_index + delta, 0, weapon_order.size())
