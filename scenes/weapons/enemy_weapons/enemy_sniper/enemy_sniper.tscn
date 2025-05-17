@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://ct3t83aa7jq8d"]
+
+[ext_resource type="Script" uid="uid://bxbmy0tk7r4fd" path="res://scenes/weapons/enemy_weapons/enemy_sniper/enemy_sniper.gd" id="1_rco1s"]
+[ext_resource type="PackedScene" uid="uid://b26kfposrgyhm" path="res://scenes/weapons/enemy_bullet.tscn" id="2_gtc0m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtc0m"]
+albedo_color = Color(0.151276, 0.151276, 0.151276, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7j3i7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrsas"]
+albedo_color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w4sva"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g8ks6"]
+albedo_color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mom0i"]
+
+[node name="Enemy Sniper" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_rco1s")
+bullet_scene = ExtResource("2_gtc0m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.38547, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.126768, 0, 0)
+material_override = SubResource("StandardMaterial3D_gtc0m")
+mesh = SubResource("BoxMesh_7j3i7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.12941, -0.289778, 0, 0.482963, 0.0776457, 0, 0, 0, 0.21, -0.303668, -0.318475, 0)
+material_override = SubResource("StandardMaterial3D_gtc0m")
+mesh = SubResource("BoxMesh_7j3i7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.21388e-08, -0.3, 0, 0.277704, -1.31134e-08, 0, 0, 0, 0.21, 0.287875, -0.234984, 0)
+material_override = SubResource("StandardMaterial3D_gtc0m")
+mesh = SubResource("BoxMesh_7j3i7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.46996, -0.102419, 0, 0.170698, 0.281976, 0, 0, 0, 0.21, -0.693943, -0.161775, 0)
+material_override = SubResource("StandardMaterial3D_gtc0m")
+mesh = SubResource("BoxMesh_7j3i7")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.29442, 0, 0, 0, 0.0707107, -0.0707107, 0, 0.0707107, 0.0707107, 1.45347, 0, 0)
+material_override = SubResource("StandardMaterial3D_lrsas")
+mesh = SubResource("BoxMesh_w4sva")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.61651e-09, -0.403491, 0, 0.22, -1.76372e-08, 0, 0, 0, 0.22, 0.160665, 0.259592, -0.000534534)
+material_override = SubResource("StandardMaterial3D_g8ks6")
+mesh = SubResource("CylinderMesh_mom0i")
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.11038, 0, -2.25805e-08)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Reload Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Reload Timer" to="." method="_on_reload_timer_timeout"]

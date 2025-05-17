@@ -13,8 +13,10 @@ enum Faction {
 }
 
 @export var bullet_scene: PackedScene
+@export var damage: float = 1.0
 @export var muzzle_speed: int = 60
 @export var seconds_between_shots: float = 0.1
+@export var bullet_despawn_time: float
 @export var ammo_capacity: int = 30
 @export var reload_time: float = 5 # Seconds
 @export var spread_angle_degrees: float = 5.0
@@ -55,7 +57,10 @@ func shoot():
 	var spread_dir = get_random_spread_direction(forward, spread_angle_degrees)
 	
 	bullet.look_at(bullet.global_position + spread_dir)
-	bullet.speed = muzzle_speed;
+	bullet.damage = damage
+	bullet.speed = muzzle_speed
+	if (bullet_despawn_time and bullet_despawn_time > 0.0):
+		bullet.despawn_time = bullet_despawn_time
 
 func _on_timer_timeout() -> void:
 	can_shoot = true;

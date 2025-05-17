@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b26kfposrgyhm"]
+
+[ext_resource type="Script" uid="uid://k22reaevc152" path="res://scenes/weapons/enemy_bullet.gd" id="1_6rt1u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lk15f"]
+albedo_color = Color(0.905269, 2.38247e-06, 1.92523e-07, 1)
+metallic = 0.95
+
+[sub_resource type="SphereMesh" id="SphereMesh_6rt1u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_me0lm"]
+
+[node name="Enemy Bullet" type="Node3D"]
+script = ExtResource("1_6rt1u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_lk15f")
+mesh = SubResource("SphereMesh_6rt1u")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
+shape = SubResource("SphereShape3D_me0lm")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

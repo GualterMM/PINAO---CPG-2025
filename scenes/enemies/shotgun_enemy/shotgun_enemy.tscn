@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://crtx3udak13na" path="res://scenes/enemies/shotgun_enemy/shotgun_enemy.gd" id="1_6dlma"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_5payg"]
 [ext_resource type="Script" uid="uid://bysglx5q6a2r1" path="res://scenes/enemies/shotgun_enemy/ai_gun_controller.gd" id="3_ee6ny"]
-[ext_resource type="PackedScene" uid="uid://0ima2eqmyjbq" path="res://scenes/weapons/shotgun/shotgun.tscn" id="4_3at05"]
+[ext_resource type="PackedScene" uid="uid://duilc0to3mvp" path="res://scenes/weapons/enemy_weapons/enemy_shotgun/enemy_shotgun.tscn" id="4_3at05"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5payg"]
 albedo_color = Color(0.890196, 0.0392157, 0.0901961, 1)
@@ -40,7 +40,7 @@ shape = SubResource("CapsuleShape3D_0kccr")
 debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_5payg")]
-max_health_points = 5.0
+max_health_points = 3.0
 
 [node name="AI Gun Controller" type="Node" parent="."]
 script = ExtResource("3_ee6ny")

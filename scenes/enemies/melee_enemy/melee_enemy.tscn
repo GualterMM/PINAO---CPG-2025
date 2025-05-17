@@ -36,6 +36,6 @@ shape = SubResource("CapsuleShape3D_lq62i")
 debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_lq62i")]
-max_health_points = 6.0
+max_health_points = 4.0
 
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]

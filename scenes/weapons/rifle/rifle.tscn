@@ -19,6 +19,7 @@ albedo_color = Color(0.501961, 0.290196, 0.105882, 1)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_ch8gi")
 bullet_scene = ExtResource("2_upv3j")
+damage = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.79993, -0.00202366, 0.000990589, 0.0122083, 0.298365, -1.08075e-05, -0.00592727, 1.73866e-05, 0.300789, 0.364077, 0, 0)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdho2yomdsjux" path="res://scenes/enemies/sniper_enemy/sniper_enemy.gd" id="1_yxf8y"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_23egm"]
 [ext_resource type="Script" uid="uid://cvfgvl3axip2e" path="res://scenes/enemies/sniper_enemy/ai_gun_controller.gd" id="3_ett20"]
-[ext_resource type="PackedScene" uid="uid://c5fggte7i2akn" path="res://scenes/weapons/sniper/sniper.tscn" id="4_iik5a"]
+[ext_resource type="PackedScene" uid="uid://ct3t83aa7jq8d" path="res://scenes/weapons/enemy_weapons/enemy_sniper/enemy_sniper.tscn" id="4_iik5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oebkf"]
 albedo_color = Color(0.118008, 0.274545, 0.13209, 1)

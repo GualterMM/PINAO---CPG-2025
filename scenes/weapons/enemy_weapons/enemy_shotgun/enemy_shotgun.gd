@@ -13,13 +13,11 @@ enum Faction {
 }
 
 @export var bullet_scene: PackedScene
-@export var damage: float = 1.0
-@export var muzzle_speed: int = 30
-@export var seconds_between_shots: float = 0.5
-@export var bullet_despawn_time: float
+@export var muzzle_speed: int = 30;
+@export var seconds_between_shots: float = 0.5;
 @export var ammo_capacity: int = 4
 @export var reload_time: float = 3 # Seconds
-@export var num_pellets: int = 5;
+@export var num_pellets: int = 3;
 @export var spread_angle_degrees: float = 10.0
 @export var fire_mode: FireMode = FireMode.SEMI_AUTO
 
@@ -57,12 +55,8 @@ func shoot():
 			bullet.set_faction(faction)  # weapon passes its faction
 		
 		var spread_dir = -muzzle.global_transform.basis.z.rotated(Vector3.UP, deg_to_rad(angle_deg)).normalized()
-		
 		bullet.look_at(bullet.global_position + spread_dir)
-		bullet.damage = damage
 		bullet.speed = muzzle_speed
-		if (bullet_despawn_time and bullet_despawn_time > 0.0):
-			bullet.despawn_time = bullet_despawn_time
 
 func get_spread_angles(pellet_count: int, total_spread_deg: float) -> Array[float]:
 	var angles: Array[float] = []

@@ -70,4 +70,11 @@ func _handle_gun_input():
 
 func _on_death():
 	print("You died!")
-	queue_free()
+	set_process(false)
+	set_physics_process(false)
+	
+	for child in get_children():
+		if child is CollisionObject3D:
+			child.disabled = true
+		if child is CanvasItem or child is Node3D:
+			child.visible = false  # or just fade via animation

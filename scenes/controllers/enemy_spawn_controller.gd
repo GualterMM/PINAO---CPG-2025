@@ -14,11 +14,10 @@ var enemies: Array[PackedScene] = []
 var regions_node: Node
 var enemies_node: Node
 var spawn_regions: Array[Node]
-var enemy_count: int = 0
 
 func _ready() -> void:
-	# enemies = [melee_enemy, pistol_enemy, shotgun_enemy, sniper_enemy]
-	enemies = [pistol_enemy]
+	enemies = [melee_enemy, pistol_enemy, shotgun_enemy, sniper_enemy]
+	# enemies = [pistol_enemy]
 	regions_node = get_parent().get_node("Enemy Spawn Regions")
 	enemies_node = get_parent().get_node("Enemies Layer")
 	
@@ -31,11 +30,12 @@ func _ready() -> void:
 		timer.start()
 
 func _on_timer_timeout() -> void:
-	if (enemy_count >= max_enemies):
-		return
+	var current_enemies_count = enemies_node.get_child_count()
+	if current_enemies_count >= max_enemies:
+		return;
 		
 	for i in range(number_enemies_per_spawn):
-		if enemy_count >= max_enemies:
+		if current_enemies_count >= max_enemies:
 			break
 		
 		var enemy_scene: PackedScene = enemies.pick_random()
@@ -60,5 +60,4 @@ func _on_timer_timeout() -> void:
 			enemy.global_position = spawn_region.global_position
 		
 		enemies_node.add_child(enemy)
-		enemy_count += 1
 	
