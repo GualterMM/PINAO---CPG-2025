@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://40h3kabiuym"]
+
+[ext_resource type="Script" uid="uid://crtx3udak13na" path="res://scenes/enemies/shotgun_enemy/shotgun_enemy.gd" id="1_6dlma"]
+[ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_5payg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5payg"]
+albedo_color = Color(0.890196, 0.0392157, 0.0901961, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ee6ny"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3at05"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nleem"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0kccr"]
+
+[node name="Shotgun Enemy" type="CharacterBody3D"]
+script = ExtResource("1_6dlma")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_5payg")
+mesh = SubResource("CapsuleMesh_ee6ny")
+
+[node name="Eyes" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.717528, 0, 0, 0, 0.2, 0, 0, 0, 0.8, -0.00802147, 0.44673, -0.160638)
+material_override = SubResource("StandardMaterial3D_3at05")
+mesh = SubResource("BoxMesh_nleem")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0kccr")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="DamageController" parent="." instance=ExtResource("2_5payg")]
+
+[connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]

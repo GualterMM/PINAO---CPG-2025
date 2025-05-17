@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://cm8180w2tuiho"]
+
+[ext_resource type="Script" uid="uid://0hu7hophl6a6" path="res://player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://04g0nehghe26" path="res://scenes/player/gun_controller.gd" id="3_gmlin"]
+[ext_resource type="PackedScene" uid="uid://vdxumac540ee" path="res://scenes/weapons/pistol/pistol.tscn" id="3_lvxji"]
+[ext_resource type="PackedScene" uid="uid://0ima2eqmyjbq" path="res://scenes/weapons/shotgun/shotgun.tscn" id="4_p47bc"]
+[ext_resource type="PackedScene" uid="uid://cgggp80v856m2" path="res://scenes/weapons/rifle/rifle.tscn" id="5_p47bc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vonw3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi3di"]
+albedo_color = Color(0.907254, 0.880572, 0.577065, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u52ul"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u52ul"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u52ul"]
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_dovo2")
+metadata/_edit_group_ = true
+
+[node name="Body" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_vonw3")
+surface_material_override/0 = SubResource("StandardMaterial3D_oi3di")
+
+[node name="Eyes" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.717528, 0, 0, 0, 0.2, 0, 0, 0, 0.8, -0.00802147, 0.44673, -0.160638)
+material_override = SubResource("StandardMaterial3D_u52ul")
+mesh = SubResource("BoxMesh_u52ul")
+skeleton = NodePath("../..")
+
+[node name="Hand" type="Marker3D" parent="Body"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.426779, 0, -0.762604)
+
+[node name="Camera Pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Camera Pivot"]
+transform = Transform3D(1, -2.18557e-08, -5.85623e-09, 1.59995e-08, 0.5, 0.866026, -1.59995e-08, -0.866026, 0.5, -0.410477, 10.1094, 8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_u52ul")
+
+[node name="Gun Controller" type="Node" parent="."]
+script = ExtResource("3_gmlin")
+pistol_scene = ExtResource("3_lvxji")
+shotgun_scene = ExtResource("4_p47bc")
+rifle_scene = ExtResource("5_p47bc")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://m1u7ycd3ijtg"]
+
+[ext_resource type="Script" uid="uid://bkuk0jd0r6w14" path="res://scenes/enemies/melee_enemy/melee_enemy.gd" id="1_df7kv"]
+[ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_lq62i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nly51"]
+albedo_color = Color(0.937255, 0.8, 0.921569, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_df7kv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_df7kv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lq62i"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lq62i"]
+
+[node name="Melee Enemy" type="CharacterBody3D"]
+script = ExtResource("1_df7kv")
+speed = 11.0
+
+[node name="Body" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_nly51")
+mesh = SubResource("CapsuleMesh_df7kv")
+
+[node name="Eyes" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.717528, 0, 0, 0, 0.2, 0, 0, 0, 0.8, -0.00802147, 0.44673, -0.160638)
+material_override = SubResource("StandardMaterial3D_df7kv")
+mesh = SubResource("BoxMesh_lq62i")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lq62i")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="DamageController" parent="." instance=ExtResource("2_lq62i")]
+
+[connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]

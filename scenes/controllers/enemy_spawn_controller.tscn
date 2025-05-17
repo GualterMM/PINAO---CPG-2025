@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsv16wi6de16d"]
+
+[ext_resource type="Script" uid="uid://c4oxt6tywiaxi" path="res://scenes/controllers/enemy_spawn_controller.gd" id="1_4yqm3"]
+[ext_resource type="PackedScene" uid="uid://m1u7ycd3ijtg" path="res://scenes/enemies/melee_enemy/melee_enemy.tscn" id="2_0qksx"]
+[ext_resource type="PackedScene" uid="uid://rexw4r8lg67c" path="res://scenes/enemies/pistol_enemy/pistol_enemy.tscn" id="3_twisp"]
+[ext_resource type="PackedScene" uid="uid://40h3kabiuym" path="res://scenes/enemies/shotgun_enemy/shotgun_enemy.tscn" id="4_sd65p"]
+[ext_resource type="PackedScene" uid="uid://dpjb0375h68i4" path="res://scenes/enemies/sniper_enemy/sniper_enemy.tscn" id="5_lvclv"]
+
+[node name="Enemy Spawn Controller" type="Node"]
+script = ExtResource("1_4yqm3")
+melee_enemy = ExtResource("2_0qksx")
+pistol_enemy = ExtResource("3_twisp")
+shotgun_enemy = ExtResource("4_sd65p")
+sniper_enemy = ExtResource("5_lvclv")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgggp80v856m2"]
+
+[ext_resource type="Script" uid="uid://cv6dsbc03r6wh" path="res://scenes/weapons/rifle/rifle.gd" id="1_ch8gi"]
+[ext_resource type="PackedScene" uid="uid://44iglr26rhs8" path="res://scenes/weapons/bullet.tscn" id="2_upv3j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6ouy"]
+albedo_color = Color(0.151276, 0.151276, 0.151276, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ch8gi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upv3j"]
+albedo_color = Color(0.501961, 0.290196, 0.105882, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hx47o"]
+albedo_color = Color(0.501961, 0.290196, 0.105882, 1)
+
+[node name="Rifle" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_ch8gi")
+bullet_scene = ExtResource("2_upv3j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.79993, -0.00202366, 0.000990589, 0.0122083, 0.298365, -1.08075e-05, -0.00592727, 1.73866e-05, 0.300789, 0.364077, 0, 0)
+material_override = SubResource("StandardMaterial3D_f6ouy")
+mesh = SubResource("BoxMesh_ch8gi")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.489853, -0.00203367, 0.00121291, 0.00332251, 0.299842, -1.3233e-05, -0.00161312, 1.74726e-05, 0.368296, 0.779642, -0.0621213, 0)
+material_override = SubResource("StandardMaterial3D_upv3j")
+mesh = SubResource("BoxMesh_ch8gi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.12941, -0.289778, 0, 0.482963, 0.0776457, 0, 0, 0, 0.21, -0.303668, -0.318475, 0)
+material_override = SubResource("StandardMaterial3D_f6ouy")
+mesh = SubResource("BoxMesh_ch8gi")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.433013, -0.15, 0, 0.25, 0.259808, 0, 0, 0, 0.21, -0.683161, -0.146689, 0)
+material_override = SubResource("StandardMaterial3D_hx47o")
+mesh = SubResource("BoxMesh_ch8gi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.203368, -0.274064, 0, 0.456773, -0.122021, 0, 0, 0, 0.21, 0.286899, -0.226456, -0.00340915)
+material_override = SubResource("StandardMaterial3D_f6ouy")
+mesh = SubResource("BoxMesh_ch8gi")
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.516582, 0, -2.25805e-08)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Reload Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Reload Timer" to="." method="_on_reload_timer_timeout"]
