@@ -41,6 +41,7 @@ debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_anxvf")]
 max_health_points = 2.0
+points_reward = 150
 
 [node name="AI Gun Controller" type="Node" parent="."]
 script = ExtResource("3_je4t4")

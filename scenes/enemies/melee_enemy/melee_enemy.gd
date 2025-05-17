@@ -125,6 +125,5 @@ func attack_target():
 func _on_damage_controller_death_signal() -> void:
 	queue_free()
 
-
 func _on_attack_cooldown_timer_timeout() -> void:
 	can_attack = true

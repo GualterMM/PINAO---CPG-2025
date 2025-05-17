@@ -4,6 +4,7 @@ class_name DamageController
 
 @export var max_health_points: float
 @export var is_player: bool = false  # Set to true on the player's instance
+@export var points_reward: int
 
 signal death_signal
 signal health_changed(current: float, max: float) 
@@ -27,4 +28,6 @@ func take_damage(damage: float):
 		handle_death()
 	
 func handle_death():
+	if(!is_player):
+		GameState.add_points(points_reward)
 	emit_signal("death_signal")

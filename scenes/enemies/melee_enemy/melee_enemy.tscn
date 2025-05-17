@@ -37,6 +37,7 @@ debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_lq62i")]
 max_health_points = 4.0
+points_reward = 100
 
 [node name="Attack Cooldown Timer" type="Timer" parent="."]
 one_shot = true

@@ -14,6 +14,10 @@ config/name="Peace Is Not an Option"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://autoload/game_state.gd"
+
 [global_group]
 
 player="Player node"
