@@ -1,5 +1,10 @@
 extends Node
 
+enum Faction {
+	PLAYER,
+	ENEMY
+}
+
 @onready var hand = $"../Body/Hand";
 
 @export var pistol_scene: PackedScene
@@ -30,22 +35,24 @@ func equip_weapon(weapon_name: String):
 		equipped_weapon.cancel_reload()
 	
 	if equipped_weapon:
-		print("Unequipping weapon ", equipped_weapon)
 		hand.remove_child(equipped_weapon); # Detach from hand without queue_free
 	
 	# Equip weapon from inventory
 	var new_weapon = weapon_inventory[weapon_name]
 	if (new_weapon.get_parent() != hand):
 		hand.add_child(new_weapon)
-	
+			
 	equipped_weapon = new_weapon
+	
+	if "set_faction" in equipped_weapon:
+		equipped_weapon.set_faction(Faction.PLAYER)
 	
 	ammo_ui.connect_weapon(equipped_weapon)
 	
 func switch_weapon(delta: int) -> void:
 	current_weapon_index = wrapi(current_weapon_index + delta, 0, weapon_order.size())
 	equip_weapon(weapon_order[current_weapon_index])
-
+	
 func switch_weapon_by_index(index: int) -> void:
 	if (index < 1 or index > 3):
 		return

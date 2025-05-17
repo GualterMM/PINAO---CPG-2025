@@ -1,12 +1,20 @@
 extends CharacterBody3D
 
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
+@onready var gun_controller: Node = $"AI Gun Controller"
 
+@export_category("Movement Properties")
 @export var speed := 3.0
 @export var acceleration := 5.0
 @export var min_distance_to_target := 7.0
 @export var buffer_distance := 1.0
 @export var retreat_speed := 2.5
+
+@export_category("Combat Properties")
+@export var shoot_range := 15.0
+@export var shot_cooldown := 1.0
+@export var shoot_timer := 0.0
+
 var target: Node3D
 
 enum State {
@@ -29,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	rotation.z = 0
 	
 	move_agent_maintaining_distance(delta)
+	shoot_target(delta)
 
 func update_target_location(target: Vector3):
 	agent.set_target_position(target)
@@ -92,5 +101,14 @@ func move_agent_maintaining_distance(delta: float):
 	look_at(target.global_position)
 	move_and_slide()
 	
+func shoot_target(delta: float):
+	shoot_timer -= delta
+	var shoot_distance = global_position.distance_to(target.global_position)
+	
+	# TODO: Improve this using raycasts to detect and avoid walls
+	if (shoot_distance <= shoot_range and shoot_timer <= 0):
+		shoot_timer = shot_cooldown
+		gun_controller.shoot()
+
 func _on_damage_controller_death_signal() -> void:
 	queue_free()

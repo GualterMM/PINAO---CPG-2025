@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpjb0375h68i4"]
+[gd_scene load_steps=10 format=3 uid="uid://dpjb0375h68i4"]
 
 [ext_resource type="Script" uid="uid://cdho2yomdsjux" path="res://scenes/enemies/sniper_enemy/sniper_enemy.gd" id="1_yxf8y"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_23egm"]
+[ext_resource type="Script" uid="uid://cvfgvl3axip2e" path="res://scenes/enemies/sniper_enemy/ai_gun_controller.gd" id="3_ett20"]
+[ext_resource type="PackedScene" uid="uid://c5fggte7i2akn" path="res://scenes/weapons/sniper/sniper.tscn" id="4_iik5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oebkf"]
 albedo_color = Color(0.118008, 0.274545, 0.13209, 1)
@@ -16,6 +18,8 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q4tad"]
 
 [node name="Sniper Enemy" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 15
 script = ExtResource("1_yxf8y")
 
 [node name="Body" type="MeshInstance3D" parent="."]
@@ -28,6 +32,9 @@ material_override = SubResource("StandardMaterial3D_k846v")
 mesh = SubResource("BoxMesh_mgfcv")
 skeleton = NodePath("../..")
 
+[node name="Hand" type="Marker3D" parent="Body"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.426779, 0, -0.762604)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_q4tad")
 
@@ -35,5 +42,9 @@ shape = SubResource("CapsuleShape3D_q4tad")
 debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_23egm")]
+
+[node name="AI Gun Controller" type="Node" parent="."]
+script = ExtResource("3_ett20")
+sniper_scene = ExtResource("4_iik5a")
 
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]

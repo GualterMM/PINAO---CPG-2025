@@ -10,6 +10,10 @@ var target_velocity := Vector3.ZERO;
 @onready var camera = $"Camera Pivot/Camera3D"
 @onready var body = $Body
 @onready var gun_controller = $"Gun Controller"
+@onready var damage_controller = $"DamageController"
+
+func _ready() -> void:
+	damage_controller.death_signal.connect(_on_death)
 
 func _physics_process(delta: float) -> void:
 	_move(delta);
@@ -63,3 +67,7 @@ func _handle_gun_input():
 		
 	if Input.is_action_just_pressed("switch_to_weapon_3"):
 		gun_controller.switch_weapon_by_index(3)
+
+func _on_death():
+	print("You died!")
+	queue_free()

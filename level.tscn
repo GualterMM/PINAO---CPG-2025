@@ -62,6 +62,7 @@ navigation_mesh = SubResource("NavigationMesh_vonw3")
 
 [node name="TestObstacle" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26723, 0.576016, -2.48692)
+collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_u52ul")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/TestObstacle"]
@@ -73,6 +74,7 @@ shape = SubResource("BoxShape3D_0b4ue")
 
 [node name="TestObstacle2" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38072, 0.576016, -2.48692)
+collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_u52ul")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/TestObstacle2"]
@@ -84,6 +86,7 @@ shape = SubResource("BoxShape3D_0b4ue")
 
 [node name="TestObstacle3" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26723, 0.576016, 5.64541)
+collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_u52ul")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/TestObstacle3"]

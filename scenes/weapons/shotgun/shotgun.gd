@@ -7,6 +7,10 @@ signal ammo_changed(current: int, max: int)
 @onready var reload_timer: Timer = $"Reload Timer";
 
 enum FireMode { SEMI_AUTO, FULL_AUTO }
+enum Faction {
+	PLAYER,
+	ENEMY
+}
 
 @export var bullet_scene: PackedScene
 @export var muzzle_speed: int = 30;
@@ -21,6 +25,10 @@ var current_ammo := ammo_capacity
 var can_shoot = true
 var is_reloading = false
 var trigger_released = true
+var faction: Faction = Faction.PLAYER
+
+func set_faction(f: Faction):
+	faction = f
 
 func _ready() -> void:
 	emit_ammo_update()
@@ -42,6 +50,9 @@ func shoot():
 		var bullet = bullet_scene.instantiate()
 		scene_root.add_child(bullet)
 		bullet.global_position = muzzle.global_position
+		
+		if "set_faction" in bullet:
+			bullet.set_faction(faction)  # weapon passes its faction
 		
 		var spread_dir = -muzzle.global_transform.basis.z.rotated(Vector3.UP, deg_to_rad(angle_deg)).normalized()
 		bullet.look_at(bullet.global_position + spread_dir)

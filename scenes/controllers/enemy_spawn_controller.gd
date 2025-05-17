@@ -15,7 +15,8 @@ var spawn_regions: Array[Node]
 var enemy_count: int = 0
 
 func _ready() -> void:
-	enemies = [melee_enemy, pistol_enemy, shotgun_enemy, sniper_enemy]
+	# enemies = [melee_enemy, pistol_enemy, shotgun_enemy, sniper_enemy]
+	enemies = [melee_enemy]
 	regions_node = get_parent().get_node("Enemy Spawn Regions")
 	if(!regions_node):
 		print("No spawn regions found")
