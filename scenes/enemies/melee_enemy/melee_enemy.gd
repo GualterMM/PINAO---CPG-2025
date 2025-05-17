@@ -1,13 +1,24 @@
 extends CharacterBody3D
 
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
+@onready var attack_cooldown_timer: Timer = $"Attack Cooldown Timer"
 
+@export_category("Movement Properties")
 @export var speed := 10.0
 @export var acceleration := 30.0
 @export var min_distance_to_target := 7.0
 @export var buffer_distance := 1.0
 @export var retreat_speed := 2.5
+
+@export_category("Combat Properties")
+@export var attack_distance := 1.5
+@export var damage := 2.0
+@export var attack_cooldown := 1.0
+
 var target: Node3D
+var target_damage_controller: DamageController
+
+var can_attack := true
 
 enum State {
 	RETREAT,
@@ -19,12 +30,25 @@ var current_state: State = State.IDLE
 
 func _ready() -> void:
 	target = get_tree().get_nodes_in_group("player")[0]
+	target_damage_controller = target.get_node("DamageController")
 	update_target_location(target.global_position)
 
 func _physics_process(delta: float) -> void:
+	if (!target):
+		return
+	
+	# Look at target (player)
 	look_at(target.global_position)
 	
-	move_agent(delta)
+	# Attack logic
+	var distance_to_player = global_position.distance_to(target.global_position)
+	print("Distance to player: ", distance_to_player, "Attack Distance: ", attack_distance)
+	if distance_to_player <= attack_distance and can_attack:
+		attack_target()
+		return # Skip movement this frame
+	
+	if (can_attack):
+		move_agent(delta)
 
 func update_target_location(target: Vector3):
 	agent.set_target_position(target)
@@ -87,5 +111,20 @@ func move_agent_maintaining_distance(delta: float):
 	look_at(target.global_position)
 	move_and_slide()
 	
+func attack_target():
+	if (!target_damage_controller): 
+		return
+	
+	print("Melee enemy attacking player!")
+	target_damage_controller.take_damage(damage)
+	can_attack = false
+	velocity = Vector3.ZERO # stop movement for this frame
+	
+	attack_cooldown_timer.start()
+
 func _on_damage_controller_death_signal() -> void:
 	queue_free()
+
+
+func _on_attack_cooldown_timer_timeout() -> void:
+	can_attack = true

@@ -38,4 +38,8 @@ debug_enabled = true
 [node name="DamageController" parent="." instance=ExtResource("2_lq62i")]
 max_health_points = 4.0
 
+[node name="Attack Cooldown Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]
+[connection signal="timeout" from="Attack Cooldown Timer" to="." method="_on_attack_cooldown_timer_timeout"]

@@ -8,7 +8,7 @@ extends Node
 @export var sniper_enemy: PackedScene
 @export var max_enemies: int = 20
 @export var seconds_between_spawns = 2
-@export var number_enemies_per_spawn = 6
+@export var number_enemies_per_spawn = 1
 
 var enemies: Array[PackedScene] = []
 var regions_node: Node
@@ -17,7 +17,7 @@ var spawn_regions: Array[Node]
 
 func _ready() -> void:
 	enemies = [melee_enemy, pistol_enemy, shotgun_enemy, sniper_enemy]
-	# enemies = [pistol_enemy]
+	# enemies = [melee_enemy]
 	regions_node = get_parent().get_node("Enemy Spawn Regions")
 	enemies_node = get_parent().get_node("Enemies Layer")
 	
