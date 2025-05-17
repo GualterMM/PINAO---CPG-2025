@@ -1,6 +1,7 @@
 extends Control
 
 @export var player_path: NodePath
+@export var level_timer: Timer
 
 @onready var ammo_label: Label = $"HBoxContainer/VBoxContainer/Panel/Ammo Label"
 @onready var reloading_bar: ProgressBar = $"HBoxContainer/VBoxContainer/Reloading Panel/Reload Bar"
@@ -8,6 +9,7 @@ extends Control
 @onready var player_damage_controller: DamageController = get_node(player_path).get_node("DamageController")
 @onready var health_points_label: Label = $"HBoxContainer/Left Side/HBoxContainer/Panel/Health Points"
 @onready var player_points_label: Label = $"HBoxContainer/Center/Points Panel/Points Label"
+@onready var level_timer_label: Label = $"HBoxContainer/Center/Timer Panel/Label"
 
 var reload_timer: Timer
 var reload_total_time: float
@@ -19,6 +21,7 @@ func _process(delta: float) -> void:
 		var fraction = 1.0 - (time_left / reload_total_time)
 		update_reload_bar(fraction)
 	update_player_points()
+	update_level_timer()
 		
 func _ready() -> void:
 	player_damage_controller.health_changed.connect(_on_health_changed)
@@ -47,10 +50,15 @@ func connect_weapon(weapon: Node3D):
 		
 func update_reload_bar(fraction: float) -> void:
 	reloading_bar.value = clamp(fraction, 0.0, 1.0) * reloading_bar.max_value
-
+	
 func update_player_points() -> void:
-	var points = GameState.get_points()
 	player_points_label.text = "Points: %d" % [GameState.total_points]
+	
+func update_level_timer() -> void:
+	var time_left = int(ceil(level_timer.time_left))
+	var minutes = time_left / 60
+	var seconds = time_left % 60
+	level_timer_label.text = "Time Left: %02d:%02d" % [minutes, seconds]
 	
 func _on_reload_started(total_time: float) -> void:
 	reload_total_time = total_time

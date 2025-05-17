@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://mfr2gf0641cc"]
+
+[ext_resource type="Script" uid="uid://bjcjlssafwgj" path="res://scenes/ui/end_screen.gd" id="1_4ttpn"]
+
+[node name="End Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ttpn")
+
+[node name="Aligner" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Aligner"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Result Panel" type="Panel" parent="Aligner/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="Aligner/VBoxContainer/Result Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Point Panel" type="Panel" parent="Aligner/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Aligner/VBoxContainer/Point Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart Panel" type="Panel" parent="Aligner/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="Restart Button" type="Button" parent="Aligner/VBoxContainer/Restart Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart Game"
+
+[node name="Quit Panel" type="Panel" parent="Aligner/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="Quit Button" type="Button" parent="Aligner/VBoxContainer/Quit Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="Aligner/VBoxContainer/Restart Panel/Restart Button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Aligner/VBoxContainer/Quit Panel/Quit Button" to="." method="_on_quit_button_pressed"]
