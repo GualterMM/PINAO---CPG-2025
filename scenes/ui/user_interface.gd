@@ -4,6 +4,9 @@ extends Control
 @export var level_timer: Timer
 
 @onready var ammo_label: Label = $"HBoxContainer/VBoxContainer/Panel/Ammo Label"
+@onready var pistol_icon: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer2/Panel2/Pistola"
+@onready var rifle_icon: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer2/Panel2/Rifle"
+@onready var shotgun_icon: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer2/Panel2/Shotgun"
 @onready var reloading_bar: ProgressBar = $"HBoxContainer/VBoxContainer/Reloading Panel/Reload Bar"
 @onready var reload_panel: Panel = $"HBoxContainer/VBoxContainer/Reloading Panel"
 @onready var player_damage_controller: DamageController = get_node(player_path).get_node("DamageController")
@@ -33,8 +36,27 @@ func _ready() -> void:
 	reload_panel.hide()
 	reloading_bar.hide()
 	weapon_status_panel.hide()
+	pistol_icon.show()
+	rifle_icon.hide()
+	shotgun_icon.hide()
 
 func connect_weapon(weapon: Node3D):
+	if weapon.name == "Pistol":
+		pistol_icon.show()
+		rifle_icon.hide()
+		shotgun_icon.hide()
+		
+	if weapon.name == "Rifle":
+		pistol_icon.hide()
+		rifle_icon.show()
+		shotgun_icon.hide()
+		
+	if weapon.name == "Shotgun":
+		pistol_icon.hide()
+		rifle_icon.hide()
+		shotgun_icon.show()
+	
+	
 	if weapon.has_signal("ammo_changed"):
 		weapon.connect("ammo_changed", Callable(self, "update_ammo"))
 		weapon.connect("ammo_changed", Callable(self, "_on_weapon_no_ammo"))

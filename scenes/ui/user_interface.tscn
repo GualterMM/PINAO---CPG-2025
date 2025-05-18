@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1h44yr66wwyu"]
+[gd_scene load_steps=5 format=3 uid="uid://b1h44yr66wwyu"]
 
 [ext_resource type="Script" uid="uid://vb0cn3sce025" path="res://scenes/ui/user_interface.gd" id="1_284y0"]
+[ext_resource type="Texture2D" uid="uid://dadpejupj8w46" path="res://scenes/weapons/icons/Icon_AK.png" id="2_rcgkl"]
+[ext_resource type="Texture2D" uid="uid://bnxb1qpl22d8t" path="res://scenes/weapons/icons/Icon_Pistol.png" id="3_vnpvo"]
+[ext_resource type="Texture2D" uid="uid://dkeqm0wkubev8" path="res://scenes/weapons/icons/Icon_Shotgun.png" id="4_vo76m"]
 
 [node name="User Interface" type="Control"]
 layout_mode = 3
@@ -40,6 +43,29 @@ text = "HP: 0.0 / 0.0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Left Side"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/Left Side/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+
+[node name="Rifle" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer2/Panel2"]
+position = Vector2(69.5, 22.5)
+scale = Vector2(0.867188, 0.859375)
+texture = ExtResource("2_rcgkl")
+
+[node name="Pistola" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer2/Panel2"]
+position = Vector2(69.5, 22.5)
+scale = Vector2(0.867188, 0.859375)
+texture = ExtResource("3_vnpvo")
+
+[node name="Shotgun" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer2/Panel2"]
+position = Vector2(72, 26)
+scale = Vector2(0.867188, 0.859375)
+texture = ExtResource("4_vo76m")
+
 [node name="Center" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -66,6 +92,7 @@ layout_mode = 2
 
 [node name="Bottom Middle" type="VBoxContainer" parent="HBoxContainer/Center"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Weapon Status Panel" type="Panel" parent="HBoxContainer/Center/Bottom Middle"]
 custom_minimum_size = Vector2(280, 50)
@@ -140,3 +167,5 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Ammo: 0/0"
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
