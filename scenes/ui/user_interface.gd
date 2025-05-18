@@ -31,11 +31,13 @@ extends Control
 @onready var dead_face: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/DEAD_FACE"
 @onready var face: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/FACE"
 
-@onready var sab_controle: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabControle
-@onready var sab_inercia: Sprite2D = $"HBoxContainer/VBoxContainer2/Sabs/SabInércia"
-@onready var sab_jam: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabJam
-@onready var sab_lock: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabLock
-@onready var sab_vision: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabVision
+@onready var sab_controle: Sprite2D = $Center/Sabs/SabControle
+@onready var sab_inercia: Sprite2D = $"Center/Sabs/SabInércia"
+@onready var sab_jam: Sprite2D = $Center/Sabs/SabJam
+@onready var sab_lock: Sprite2D = $Center/Sabs/SabLock
+@onready var sab_vision: Sprite2D = $Center/Sabs/SabVision
+
+@onready var tema: Label = $"Center/Timer Panel/daqui_pra_frente"
 
 var reload_timer: Timer
 var reload_total_time: float

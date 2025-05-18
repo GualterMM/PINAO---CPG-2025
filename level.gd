@@ -22,7 +22,7 @@ func _on_player_died() -> void:
 	
 func show_end_screen(won: bool) -> void:
 	get_tree().paused = true
-	
+	"res://scenes/assets/texture/water.jpg"
 	var end_screen_instance = end_screen.instantiate()
 	end_screen_instance.is_session_won = won 
 	add_child(end_screen_instance)
