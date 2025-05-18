@@ -13,11 +13,13 @@ func _ready() -> void:
 
 func _on_win_timer_timeout() -> void:
 	print("You won!")
+	$"User Interface".center.hide()
 	show_end_screen(true)
 	
 func _on_player_died() -> void:
 	$"User Interface".death()
 	print("You lost!")
+	$"User Interface".center.hide()
 	show_end_screen(false)
 	
 func show_end_screen(won: bool) -> void:

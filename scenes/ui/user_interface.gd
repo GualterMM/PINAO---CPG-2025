@@ -14,7 +14,7 @@ extends Control
 @onready var health_points_label: Label = $"HBoxContainer/Left Side/HBoxContainer/Panel/Health Points"
 @onready var player_points_label: Label = $"Center/Bottom Middle/Points Panel/Points Label"
 @onready var level_timer_label: Label = $"Center/Timer Panel/Label"
-@onready var weapon_status_panel: Panel = $"Center/Bottom Middle/Weapon Status Panel"
+@onready var weapon_status_panel: Label = $"Center/Bottom Middle/Label"
 @onready var weapon_status_label: Label = $"Center/Bottom Middle/Weapon Status Panel/Label"
 
 @onready var hp_icon_1: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP1"
@@ -39,6 +39,8 @@ extends Control
 
 @onready var tema: Label = $"Center/Timer Panel/daqui_pra_frente"
 @onready var tema2: Label = $"Center/Timer Panel/so_pra_tras"
+
+@onready var center: VBoxContainer = $Center
 
 var reload_timer: Timer
 var reload_total_time: float
@@ -154,10 +156,10 @@ func update_weapon_status_panel() -> void:
 	if(weapon_jammed or no_ammo):
 		weapon_status_panel.visible = true
 		if(no_ammo):
-			weapon_status_label.text = "Sem munição!"
+			weapon_status_panel.text = "SEM MUNIÇÃO!"
 			return
 		if(weapon_jammed):
-			weapon_status_label.text = "A arma travou! Recarregue para continuar"
+			weapon_status_panel.text = "Arma travada! Recarregue para continuar"
 			return
 	else:
 		weapon_status_panel.visible = false

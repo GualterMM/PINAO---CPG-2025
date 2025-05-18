@@ -70,12 +70,10 @@ vertical_alignment = 1
 
 [node name="so_pra_tras" type="Label" parent="Center/Timer Panel"]
 layout_mode = 0
-
 offset_left = 38.0
 offset_top = 114.0
 offset_right = 241.0
 offset_bottom = 151.0
-
 theme_override_colors/font_color = Color(0.796078, 0, 0.682353, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fve8i")
@@ -117,18 +115,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Weapon Status Panel" type="Panel" parent="Center/Bottom Middle"]
-custom_minimum_size = Vector2(280, 50)
+[node name="Label" type="Label" parent="Center/Bottom Middle"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="Center/Bottom Middle/Weapon Status Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Sem munição!"
+theme_override_colors/font_color = Color(0.603922, 0, 0.509804, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fve8i")
+theme_override_font_sizes/font_size = 30
+text = "SEM MUNIÇÃO!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
