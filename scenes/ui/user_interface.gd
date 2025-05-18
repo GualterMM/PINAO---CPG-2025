@@ -40,6 +40,8 @@ extends Control
 @onready var tema: Label = $"Center/Timer Panel/daqui_pra_frente"
 @onready var tema2: Label = $"Center/Timer Panel/so_pra_tras"
 
+@onready var center: VBoxContainer = $Center
+
 var reload_timer: Timer
 var reload_total_time: float
 var weapon_ref
