@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkuk0jd0r6w14" path="res://scenes/enemies/melee_enemy/melee_enemy.gd" id="1_df7kv"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_lq62i"]
-[ext_resource type="ArrayMesh" uid="uid://dniukhsgjw11j" path="res://scenes/enemies/melee_enemy/MallardDuck.obj" id="3_di05e"]
+[ext_resource type="PackedScene" uid="uid://dpg0d4myp5ccd" path="res://scenes/enemies/melee_enemy/BlackDuck.glb" id="3_di05e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nly51"]
 albedo_color = Color(0.937255, 0.8, 0.921569, 1)
@@ -46,9 +46,8 @@ points_reward = 100
 [node name="Attack Cooldown Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="MallardDuck" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0716236, -1.20573, 0.529751)
-mesh = ExtResource("3_di05e")
+[node name="BlackDuck" parent="." instance=ExtResource("3_di05e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0660138, -1.23253, 0.567544)
 
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]
 [connection signal="timeout" from="Attack Cooldown Timer" to="." method="_on_attack_cooldown_timer_timeout"]
