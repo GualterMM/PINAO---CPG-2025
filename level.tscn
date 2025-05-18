@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://clvskixc2dnuk"]
+[gd_scene load_steps=13 format=3 uid="uid://clvskixc2dnuk"]
 
 [ext_resource type="Script" uid="uid://b84jcpopafvsl" path="res://level.gd" id="1_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://b1h44yr66wwyu" path="res://scenes/ui/user_interface.tscn" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cm8180w2tuiho" path="res://scenes/player/player.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://mfr2gf0641cc" path="res://scenes/ui/end_screen.tscn" id="2_f2txt"]
+[ext_resource type="Texture2D" uid="uid://b1nyvuu4bu0hw" path="res://scenes/assets/visual_impair_shader/obscure effect.png" id="4_1ainy"]
 [ext_resource type="PackedScene" uid="uid://dsv16wi6de16d" path="res://scenes/controllers/enemy_spawn_controller.tscn" id="6_1ainy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2txt"]
@@ -21,9 +22,23 @@ albedo_color = Color(0.288518, 0.288518, 0.288518, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0b4ue"]
 
-[node name="Level" type="Node3D"]
+[node name="Level" type="Node3D" node_paths=PackedStringArray("vision_obscure")]
 script = ExtResource("1_0b4ue")
 end_screen = ExtResource("2_f2txt")
+vision_obscure = NodePath("Vision Obscure Texture")
+
+[node name="Vision Obscure Texture" type="TextureRect" parent="."]
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -218.0
+offset_right = 384.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1ainy")
 
 [node name="User Interface" parent="." node_paths=PackedStringArray("level_timer") instance=ExtResource("1_oi3di")]
 player_path = NodePath("../Player Layer/Player")

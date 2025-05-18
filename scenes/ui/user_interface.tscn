@@ -60,12 +60,34 @@ text = "Time Left: 00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Points Panel" type="Panel" parent="HBoxContainer/Center"]
+[node name="Important Section" type="MarginContainer" parent="HBoxContainer/Center"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Bottom Middle" type="VBoxContainer" parent="HBoxContainer/Center"]
+layout_mode = 2
+
+[node name="Weapon Status Panel" type="Panel" parent="HBoxContainer/Center/Bottom Middle"]
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Center/Bottom Middle/Weapon Status Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Out of Ammo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points Panel" type="Panel" parent="HBoxContainer/Center/Bottom Middle"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Points Label" type="Label" parent="HBoxContainer/Center/Points Panel"]
+[node name="Points Label" type="Label" parent="HBoxContainer/Center/Bottom Middle/Points Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
