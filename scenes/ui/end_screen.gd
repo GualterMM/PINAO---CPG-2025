@@ -10,8 +10,8 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	GameState.game_status = "over"
 	
-	you_label.text = "You"
-	won_label.text = " won!" if is_session_won else " lost!"
+	you_label.text = "YOU"
+	won_label.text = "WON!" if is_session_won else "LOST!"
 	
 	points_label.text = "Points: %d" % [GameState.total_points]
 
