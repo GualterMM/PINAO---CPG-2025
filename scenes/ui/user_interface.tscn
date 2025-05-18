@@ -57,10 +57,10 @@ vertical_alignment = 1
 
 [node name="daqui_pra_frente" type="Label" parent="Center/Timer Panel"]
 layout_mode = 2
-offset_left = 81.0
-offset_top = 142.0
-offset_right = 190.0
-offset_bottom = 165.0
+offset_left = 65.0
+offset_top = 86.0
+offset_right = 219.0
+offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -70,10 +70,12 @@ vertical_alignment = 1
 
 [node name="so_pra_tras" type="Label" parent="Center/Timer Panel"]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 166.0
-offset_right = 240.0
-offset_bottom = 203.0
+
+offset_left = 38.0
+offset_top = 114.0
+offset_right = 241.0
+offset_bottom = 151.0
+
 theme_override_colors/font_color = Color(0.796078, 0, 0.682353, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fve8i")
@@ -83,29 +85,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sabs" type="HBoxContainer" parent="Center"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="SabControle" type="Sprite2D" parent="Center/Sabs"]
-position = Vector2(-25, -154)
+position = Vector2(-21, -115)
 texture = ExtResource("9_2pyj2")
 
 [node name="SabInércia" type="Sprite2D" parent="Center/Sabs"]
-position = Vector2(-81, -154)
+position = Vector2(-77, -115)
 texture = ExtResource("10_fve8i")
 
 [node name="SabJam" type="Sprite2D" parent="Center/Sabs"]
-position = Vector2(-137, -154)
+position = Vector2(-133, -115)
 texture = ExtResource("11_0nkc2")
 
 [node name="SabLock" type="Sprite2D" parent="Center/Sabs"]
-position = Vector2(-193, -154)
+position = Vector2(-189, -115)
 texture = ExtResource("12_isdaw")
 
 [node name="SabVision" type="Sprite2D" parent="Center/Sabs"]
-position = Vector2(-249, -154)
+position = Vector2(-245, -115)
 texture = ExtResource("13_gdqgt")
 
 [node name="Important Section" type="MarginContainer" parent="Center"]

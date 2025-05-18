@@ -7,8 +7,8 @@ var sabotage_timers: Dictionary = {} # id -> Timer node
 
 signal sabotage_toggled(id: String, enabled: bool)
 
-@export var sabotage_duration := 5.0
-@export var grace_period_in_millis := 15000.0
+@export var sabotage_duration := 10.0
+@export var grace_period_in_millis := 30000.0
 
 const SABOTAGES := {
 	"sab_vision_impair": {
