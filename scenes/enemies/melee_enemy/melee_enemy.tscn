@@ -33,7 +33,7 @@ mesh = SubResource("BoxMesh_lq62i")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.24032, 0, 0, 0.373419)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.51142, 0, 0, 0.373419)
 shape = SubResource("CapsuleShape3D_lq62i")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -47,7 +47,7 @@ points_reward = 100
 one_shot = true
 
 [node name="BlackDuck" parent="." instance=ExtResource("3_di05e")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0660138, -1.23253, 0.567544)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00324965, -1.23253, 0.33359)
 
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]
 [connection signal="timeout" from="Attack Cooldown Timer" to="." method="_on_attack_cooldown_timer_timeout"]
