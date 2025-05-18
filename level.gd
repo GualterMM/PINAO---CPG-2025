@@ -15,6 +15,7 @@ func _on_win_timer_timeout() -> void:
 	show_end_screen(true)
 	
 func _on_player_died() -> void:
+	$"User Interface".death()
 	print("You lost!")
 	show_end_screen(false)
 	

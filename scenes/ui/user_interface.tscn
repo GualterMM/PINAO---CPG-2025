@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1h44yr66wwyu"]
+[gd_scene load_steps=14 format=3 uid="uid://b1h44yr66wwyu"]
 
 [ext_resource type="Script" uid="uid://vb0cn3sce025" path="res://scenes/ui/user_interface.gd" id="1_284y0"]
 [ext_resource type="Texture2D" uid="uid://dadpejupj8w46" path="res://scenes/weapons/icons/Icon_AK.png" id="2_rcgkl"]
+[ext_resource type="Texture2D" uid="uid://b8so3iww3sn2p" path="res://scenes/assets/health_bar_icons/Icon_Life.png" id="2_vo76m"]
+[ext_resource type="Texture2D" uid="uid://dup8o1q0lsuyq" path="res://scenes/assets/health_bar_icons/Icon_Goose.png" id="2_xg44s"]
+[ext_resource type="Texture2D" uid="uid://dbl1702vg1ocr" path="res://scenes/assets/health_bar_icons/Icon_Dead_Goose.png" id="3_fhs8v"]
 [ext_resource type="Texture2D" uid="uid://bnxb1qpl22d8t" path="res://scenes/weapons/icons/Icon_Pistol.png" id="3_vnpvo"]
 [ext_resource type="Texture2D" uid="uid://dkeqm0wkubev8" path="res://scenes/weapons/icons/Icon_Shotgun.png" id="4_vo76m"]
+[ext_resource type="Texture2D" uid="uid://smioiwuivxig" path="res://scenes/ui/Icon_Ammo.png" id="5_vnpvo"]
+[ext_resource type="Texture2D" uid="uid://ia6lm2t4ui3v" path="res://scenes/assets/sabotagens/Icon_Sab_Control.png" id="9_2pyj2"]
+[ext_resource type="Texture2D" uid="uid://blutqk21toga3" path="res://scenes/assets/sabotagens/Icon_Sab_Inércia.png" id="10_fve8i"]
+[ext_resource type="Texture2D" uid="uid://ct8hdi2pflsi5" path="res://scenes/assets/sabotagens/Icon_Sab_Jam.png" id="11_0nkc2"]
+[ext_resource type="Texture2D" uid="uid://giyhx2kk4w1i" path="res://scenes/assets/sabotagens/Icon_Sab_Lock.png" id="12_isdaw"]
+[ext_resource type="Texture2D" uid="uid://c3smseo56cfq7" path="res://scenes/assets/sabotagens/Icon_Sab_Vision.png" id="13_gdqgt"]
 
 [node name="User Interface" type="Control"]
 layout_mode = 3
@@ -13,6 +22,76 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_284y0")
+
+[node name="Center" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -324.0
+offset_right = 140.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 10
+
+[node name="Timer Panel" type="Panel" parent="Center"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="Center/Timer Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Time Left: 00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Important Section" type="MarginContainer" parent="Center"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Bottom Middle" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Weapon Status Panel" type="Panel" parent="Center/Bottom Middle"]
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Center/Bottom Middle/Weapon Status Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Out of Ammo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points Panel" type="Panel" parent="Center/Bottom Middle"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Points Label" type="Label" parent="Center/Bottom Middle/Points Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -29,6 +108,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="HBoxContainer/Left Side/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 
@@ -42,6 +122,64 @@ grow_vertical = 2
 text = "HP: 0.0 / 0.0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FACE" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(41, 58)
+texture = ExtResource("2_xg44s")
+
+[node name="DEAD_FACE" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(41, 58)
+texture = ExtResource("3_fhs8v")
+
+[node name="HP1" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(95.4, 40.4)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP2" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(135.4, 40.4)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP3" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(175.4, 40.4)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP4" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(215.4, 40.4)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP5" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(255.4, 40.4)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP6" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(95.8, 78.8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP7" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(135.8, 78.8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP8" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(175.8, 78.8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP9" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(215.8, 78.8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
+
+[node name="HP10" type="Sprite2D" parent="HBoxContainer/Left Side/HBoxContainer"]
+position = Vector2(255.8, 78.8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vo76m")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Left Side"]
 layout_mode = 2
@@ -66,77 +204,47 @@ position = Vector2(72, 26)
 scale = Vector2(0.867188, 0.859375)
 texture = ExtResource("4_vo76m")
 
-[node name="Center" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 
-[node name="Timer Panel" type="Panel" parent="HBoxContainer/Center"]
-custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
-size_flags_vertical = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/Center/Timer Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Time Left: 00:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Important Section" type="MarginContainer" parent="HBoxContainer/Center"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="Bottom Middle" type="VBoxContainer" parent="HBoxContainer/Center"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Weapon Status Panel" type="Panel" parent="HBoxContainer/Center/Bottom Middle"]
-custom_minimum_size = Vector2(280, 50)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/Center/Bottom Middle/Weapon Status Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Out of Ammo!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Points Panel" type="Panel" parent="HBoxContainer/Center/Bottom Middle"]
-custom_minimum_size = Vector2(150, 50)
-layout_mode = 2
-size_flags_vertical = 10
-
-[node name="Points Label" type="Label" parent="HBoxContainer/Center/Bottom Middle/Points Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Points: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="Sabs" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 8
+size_flags_vertical = 2
 
-[node name="Reloading Panel" type="Panel" parent="HBoxContainer/VBoxContainer"]
+[node name="SabControle" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
+position = Vector2(-33, 33)
+texture = ExtResource("9_2pyj2")
+
+[node name="SabInércia" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
+position = Vector2(-89, 33)
+texture = ExtResource("10_fve8i")
+
+[node name="SabJam" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
+position = Vector2(-145, 33)
+texture = ExtResource("11_0nkc2")
+
+[node name="SabLock" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
+position = Vector2(-201, 33)
+texture = ExtResource("12_isdaw")
+
+[node name="SabVision" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
+position = Vector2(-257, 33)
+texture = ExtResource("13_gdqgt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+
+[node name="Reloading Panel" type="Panel" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="Reload Bar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/Reloading Panel"]
+[node name="Reload Bar" type="ProgressBar" parent="HBoxContainer/VBoxContainer2/VBoxContainer/Reloading Panel"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -147,25 +255,30 @@ offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8
 
-[node name="Ammo Label" type="Label" parent="HBoxContainer/VBoxContainer/Panel"]
+[node name="Ammo Label" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -26.0
+offset_top = -12.0
+offset_right = 59.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Ammo: 0/0"
+
+[node name="Ammo Icon" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/VBoxContainer/Panel"]
+position = Vector2(19, 26)
+scale = Vector2(0.6875, 0.75)
+texture = ExtResource("5_vnpvo")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]

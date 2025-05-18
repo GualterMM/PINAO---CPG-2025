@@ -10,11 +10,14 @@
 albedo_color = Color(0.118008, 0.274545, 0.13209, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f1idx"]
+radius = 0.0005
+height = 0.001
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k846v"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mgfcv"]
+size = Vector3(0.01, 0.01, 0.01)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q4tad"]
 
@@ -22,7 +25,6 @@ albedo_color = Color(0, 0, 0, 1)
 script = ExtResource("1_yxf8y")
 
 [node name="Body" type="MeshInstance3D" parent="."]
-visible = false
 material_override = SubResource("StandardMaterial3D_oebkf")
 mesh = SubResource("CapsuleMesh_f1idx")
 

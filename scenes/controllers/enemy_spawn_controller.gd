@@ -17,7 +17,10 @@ var spawn_regions: Array[Node]
 
 func _ready() -> void:
 	enemies = [melee_enemy, pistol_enemy, shotgun_enemy, sniper_enemy]
-	# enemies = [sniper_enemy]
+	#enemies = [melee_enemy]
+	#enemies = [pistol_enemy]
+	#enemies = [shotgun_enemy]
+	#enemies = [sniper_enemy]
 	regions_node = get_parent().get_node("Enemy Spawn Regions")
 	enemies_node = get_parent().get_node("Enemies Layer")
 	
