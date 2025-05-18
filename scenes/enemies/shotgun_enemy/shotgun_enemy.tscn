@@ -1,19 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://40h3kabiuym"]
+[gd_scene load_steps=11 format=3 uid="uid://40h3kabiuym"]
 
 [ext_resource type="Script" uid="uid://crtx3udak13na" path="res://scenes/enemies/shotgun_enemy/shotgun_enemy.gd" id="1_6dlma"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_5payg"]
 [ext_resource type="Script" uid="uid://bysglx5q6a2r1" path="res://scenes/enemies/shotgun_enemy/ai_gun_controller.gd" id="3_ee6ny"]
 [ext_resource type="PackedScene" uid="uid://duilc0to3mvp" path="res://scenes/weapons/enemy_weapons/enemy_shotgun/enemy_shotgun.tscn" id="4_3at05"]
+[ext_resource type="PackedScene" uid="uid://cpqaotv0nkkn2" path="res://scenes/enemies/shotgun_enemy/YellowDuck.glb" id="5_nleem"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5payg"]
 albedo_color = Color(0.890196, 0.0392157, 0.0901961, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ee6ny"]
+radius = 0.05
+height = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3at05"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nleem"]
+size = Vector3(0.01, 0.01, 0.01)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0kccr"]
 
@@ -34,6 +38,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.426779, 0, -0.762604)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.191, 0, 0, 0.338462)
 shape = SubResource("CapsuleShape3D_0kccr")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -46,5 +51,8 @@ points_reward = 200
 [node name="AI Gun Controller" type="Node" parent="."]
 script = ExtResource("3_ee6ny")
 shotgun_scene = ExtResource("4_3at05")
+
+[node name="YellowDuck" parent="." instance=ExtResource("5_nleem")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0275111, -1.34188, 0.416751)
 
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]
