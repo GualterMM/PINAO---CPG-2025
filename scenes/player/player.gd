@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var max_health := 100;
 
 @onready var camera = $"Camera Pivot/Camera3D"
-@onready var body = $Body
+@onready var body = $UntitledGoose
 @onready var gun_controller = $"Gun Controller"
 @onready var damage_controller = $"DamageController"
 

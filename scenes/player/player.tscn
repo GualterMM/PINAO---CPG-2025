@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cm8180w2tuiho"]
+[gd_scene load_steps=13 format=3 uid="uid://cm8180w2tuiho"]
 
 [ext_resource type="Script" uid="uid://0hu7hophl6a6" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://04g0nehghe26" path="res://scenes/player/gun_controller.gd" id="3_gmlin"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0ima2eqmyjbq" path="res://scenes/weapons/shotgun/shotgun.tscn" id="4_p47bc"]
 [ext_resource type="PackedScene" uid="uid://cgggp80v856m2" path="res://scenes/weapons/rifle/rifle.tscn" id="5_p47bc"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="6_75vfm"]
+[ext_resource type="PackedScene" uid="uid://cehgx4qryrpet" path="res://scenes/player/UntitledGoose.glb" id="7_0owmy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vonw3"]
 
@@ -25,6 +26,7 @@ script = ExtResource("1_dovo2")
 metadata/_edit_group_ = true
 
 [node name="Body" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_vonw3")
 surface_material_override/0 = SubResource("StandardMaterial3D_oi3di")
 
@@ -54,3 +56,9 @@ rifle_scene = ExtResource("5_p47bc")
 [node name="DamageController" parent="." instance=ExtResource("6_75vfm")]
 max_health_points = 10.0
 is_player = true
+
+[node name="UntitledGoose" parent="." instance=ExtResource("7_0owmy")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.0904951, -0.641089, -0.156487)
+
+[node name="Hand" type="Marker3D" parent="UntitledGoose"]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0.816347, 1.03033, -0.139886)

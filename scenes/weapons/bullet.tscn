@@ -14,7 +14,7 @@ metallic = 0.95
 script = ExtResource("1_mx1hr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_nmt3y")
 mesh = SubResource("SphereMesh_mx1hr")
 

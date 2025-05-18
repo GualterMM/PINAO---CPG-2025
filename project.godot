@@ -21,6 +21,10 @@ GameState="*res://autoload/game_state.gd"
 GlobalSabotageManager="*res://autoload/sabotage_manager.gd"
 WebsocketManager="*res://autoload/websocket_manager.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 player="Player node"

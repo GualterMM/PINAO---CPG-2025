@@ -14,10 +14,11 @@ enum Faction {
 
 @export var bullet_scene: PackedScene
 @export var muzzle_speed: int = 30;
-@export var seconds_between_shots: float = 0.5;
+@export var damage: float = 1
+@export var seconds_between_shots: float = 1.5;
 @export var ammo_capacity: int = 4
 @export var reload_time: float = 3 # Seconds
-@export var num_pellets: int = 3;
+@export var num_pellets: int = 2;
 @export var spread_angle_degrees: float = 10.0
 @export var fire_mode: FireMode = FireMode.SEMI_AUTO
 
@@ -57,6 +58,7 @@ func shoot():
 		var spread_dir = -muzzle.global_transform.basis.z.rotated(Vector3.UP, deg_to_rad(angle_deg)).normalized()
 		bullet.look_at(bullet.global_position + spread_dir)
 		bullet.speed = muzzle_speed
+		bullet.damage = damage
 
 func get_spread_angles(pellet_count: int, total_spread_deg: float) -> Array[float]:
 	var angles: Array[float] = []

@@ -5,7 +5,7 @@ enum Faction {
 	ENEMY
 }
 
-@onready var hand = $"../Body/Hand";
+@onready var hand = $"../UntitledGoose/Hand";
 
 @export var pistol_scene: PackedScene
 @export var shotgun_scene: PackedScene

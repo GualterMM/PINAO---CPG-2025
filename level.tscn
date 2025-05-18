@@ -467,8 +467,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68812, -71.9199)
 [node name="Enemy Spawn Controller" parent="." instance=ExtResource("6_1ainy")]
 
 [node name="Win Timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 180.0
 one_shot = true
 autostart = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="Win Timer" to="." method="_on_win_timer_timeout"]

@@ -22,7 +22,7 @@ enum Faction {
 @export var bullet_despawn_time: float
 @export var ammo_capacity: int = 6
 @export var reload_time: float = 2.5 # Seconds
-@export var num_pellets: int = 5;
+@export var num_pellets: int = 6;
 @export var spread_angle_degrees: float = 15.0
 @export var fire_mode: FireMode = FireMode.SEMI_AUTO
 @export var weapon_jam_chance: float = 0.25

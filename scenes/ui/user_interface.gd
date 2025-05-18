@@ -3,15 +3,39 @@ extends Control
 @export var player_path: NodePath
 @export var level_timer: Timer
 
-@onready var ammo_label: Label = $"HBoxContainer/VBoxContainer/Panel/Ammo Label"
-@onready var reloading_bar: ProgressBar = $"HBoxContainer/VBoxContainer/Reloading Panel/Reload Bar"
-@onready var reload_panel: Panel = $"HBoxContainer/VBoxContainer/Reloading Panel"
+@onready var ammo_label: Label = $"HBoxContainer/VBoxContainer2/VBoxContainer/Panel/Ammo Label"
+@onready var ammo_icon: Sprite2D = $"HBoxContainer/VBoxContainer2/VBoxContainer/Panel/Ammo Icon"
+@onready var pistol_icon: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer2/Panel2/Pistola"
+@onready var rifle_icon: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer2/Panel2/Rifle"
+@onready var shotgun_icon: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer2/Panel2/Shotgun"
+@onready var reloading_bar: ProgressBar = $"HBoxContainer/VBoxContainer2/VBoxContainer/Reloading Panel/Reload Bar"
+@onready var reload_panel: Panel = $"HBoxContainer/VBoxContainer2/VBoxContainer/Reloading Panel"
 @onready var player_damage_controller: DamageController = get_node(player_path).get_node("DamageController")
 @onready var health_points_label: Label = $"HBoxContainer/Left Side/HBoxContainer/Panel/Health Points"
-@onready var player_points_label: Label = $"HBoxContainer/Center/Bottom Middle/Points Panel/Points Label"
-@onready var level_timer_label: Label = $"HBoxContainer/Center/Timer Panel/Label"
-@onready var weapon_status_panel: Panel = $"HBoxContainer/Center/Bottom Middle/Weapon Status Panel"
-@onready var weapon_status_label: Label = $"HBoxContainer/Center/Bottom Middle/Weapon Status Panel/Label"
+@onready var player_points_label: Label = $"Center/Bottom Middle/Points Panel/Points Label"
+@onready var level_timer_label: Label = $"Center/Timer Panel/Label"
+@onready var weapon_status_panel: Panel = $"Center/Bottom Middle/Weapon Status Panel"
+@onready var weapon_status_label: Label = $"Center/Bottom Middle/Weapon Status Panel/Label"
+
+@onready var hp_icon_1: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP1"
+@onready var hp_icon_2: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP2"
+@onready var hp_icon_3: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP3"
+@onready var hp_icon_4: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP4"
+@onready var hp_icon_5: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP5"
+@onready var hp_icon_6: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP6"
+@onready var hp_icon_7: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP7"
+@onready var hp_icon_8: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP8"
+@onready var hp_icon_9: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP9"
+@onready var hp_icon_10: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/HP10"
+
+@onready var dead_face: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/DEAD_FACE"
+@onready var face: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/FACE"
+
+@onready var sab_controle: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabControle
+@onready var sab_inercia: Sprite2D = $"HBoxContainer/VBoxContainer2/Sabs/SabInércia"
+@onready var sab_jam: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabJam
+@onready var sab_lock: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabLock
+@onready var sab_vision: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabVision
 
 var reload_timer: Timer
 var reload_total_time: float
@@ -33,8 +57,58 @@ func _ready() -> void:
 	reload_panel.hide()
 	reloading_bar.hide()
 	weapon_status_panel.hide()
+	pistol_icon.show()
+	rifle_icon.hide()
+	shotgun_icon.hide()
+	ammo_icon.show()
+	hp_icon_1.show()
+	hp_icon_2.show()
+	hp_icon_3.show()
+	hp_icon_4.show()
+	hp_icon_5.show()
+	hp_icon_6.show()
+	hp_icon_7.show()
+	hp_icon_8.show()
+	hp_icon_9.show()
+	hp_icon_10.show()
+	dead_face.hide()
+	sab_controle.hide()
+	sab_inercia.hide()
+	sab_jam.hide()
+	sab_lock.hide()
+	sab_vision.hide()
+
+func death():
+	dead_face.show()
+	hp_icon_1.hide()
+	hp_icon_2.hide()
+	hp_icon_3.hide()
+	hp_icon_4.hide()
+	hp_icon_5.hide()
+	hp_icon_6.hide()
+	hp_icon_7.hide()
+	hp_icon_8.hide()
+	hp_icon_9.hide()
+	hp_icon_10.hide()
+	face.hide()
 
 func connect_weapon(weapon: Node3D):
+	if weapon.name == "Pistol":
+		pistol_icon.show()
+		rifle_icon.hide()
+		shotgun_icon.hide()
+		
+	if weapon.name == "Rifle":
+		pistol_icon.hide()
+		rifle_icon.show()
+		shotgun_icon.hide()
+		
+	if weapon.name == "Shotgun":
+		pistol_icon.hide()
+		rifle_icon.hide()
+		shotgun_icon.show()
+	
+	
 	if weapon.has_signal("ammo_changed"):
 		weapon.connect("ammo_changed", Callable(self, "update_ammo"))
 		weapon.connect("ammo_changed", Callable(self, "_on_weapon_no_ammo"))
@@ -104,7 +178,56 @@ func _on_health_changed(current: float, max: float):
 	if(current <= 0):
 		health_points_label.text = "Dead"
 	else:
-		health_points_label.text = "HP: %d/%d" % [current, max]
+		# health_points_label.text = "HP: %d/%d" % [current, max]
+		if (current >=1):
+			hp_icon_1.show()
+		else:
+			hp_icon_1.hide()
+		
+		if (current >=2):
+			hp_icon_2.show()
+		else:
+			hp_icon_2.hide()
+		
+		if (current >=3):
+			hp_icon_3.show()
+		else:
+			hp_icon_3.hide()
+		
+		if (current >=4):
+			hp_icon_4.show()
+		else:
+			hp_icon_4.hide()
+		
+		if (current >=5):
+			hp_icon_5.show()
+		else:
+			hp_icon_5.hide()
+		
+		if (current >=6):
+			hp_icon_6.show()
+		else:
+			hp_icon_6.hide()
+		
+		if (current >=7):
+			hp_icon_7.show()
+		else:
+			hp_icon_7.hide()
+		
+		if (current >=8):
+			hp_icon_8.show()
+		else:
+			hp_icon_8.hide()
+		
+		if (current >=9):
+			hp_icon_9.show()
+		else:
+			hp_icon_9.hide()
+		
+		if (current >=10):
+			hp_icon_10.show()
+		else:
+			hp_icon_10.hide()
 
 func _on_weapon_no_ammo(current: int, max: int):
 	if(current == 0):
