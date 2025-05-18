@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvpd125da132b"]
+
+[ext_resource type="Script" uid="uid://7dcrsksegmkf" path="res://scenes/ui/main_menu.gd" id="1_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://b0uasqswh067w" path="res://scenes/assets/art/Splash_Art_Com_Fundo.png" id="1_sl1te"]
+[ext_resource type="FontFile" uid="uid://dyx72niys3jej" path="res://scenes/assets/fonts/Rubik-Bold.ttf" id="2_1g8jr"]
+[ext_resource type="FontFile" uid="uid://dmxbkaixlpjrr" path="res://scenes/assets/fonts/RubikGlitch-Regular.ttf" id="3_m1kxf"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m1kxf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sl1te")
+expand_mode = 1
+
+[node name="Screen" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VBoxContainer" parent="Screen"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Center" type="VBoxContainer" parent="Screen"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Top Text Align" type="HBoxContainer" parent="Screen/Center"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Screen/Center/Top Text Align"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 63
+text = "PEACE IS "
+
+[node name="Label2" type="Label" parent="Screen/Center/Top Text Align"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.2, 0.513726, 1)
+theme_override_fonts/font = ExtResource("3_m1kxf")
+theme_override_font_sizes/font_size = 63
+text = "NOT"
+
+[node name="Label3" type="Label" parent="Screen/Center/Top Text Align"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 63
+text = " AN OPTION"
+
+[node name="Bottom Text Align" type="HBoxContainer" parent="Screen/Center"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Play Panel" type="Panel" parent="Screen/Center/Bottom Text Align"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Play Button" type="Button" parent="Screen/Center/Bottom Text Align/Play Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.94902, 0.2, 0.513726, 1)
+theme_override_fonts/font = ExtResource("3_m1kxf")
+theme_override_font_sizes/font_size = 41
+text = "JOGAR"
+
+[node name="Player Name Align" type="VBoxContainer" parent="Screen/Center/Bottom Text Align"]
+layout_mode = 2
+
+[node name="Player Name Panel" type="Panel" parent="Screen/Center/Bottom Text Align/Player Name Align"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Screen/Center/Bottom Text Align/Player Name Align/Player Name Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 23
+text = "Nome do jogador"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player Name Text Field" type="Panel" parent="Screen/Center/Bottom Text Align/Player Name Align"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Player Name Text Editor" type="TextEdit" parent="Screen/Center/Bottom Text Align/Player Name Align/Player Name Text Field"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Nome"
+
+[node name="Quit Panel" type="Panel" parent="Screen/Center/Bottom Text Align"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Quit Button" type="Button" parent="Screen/Center/Bottom Text Align/Quit Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_m1kxf")
+theme_override_font_sizes/font_size = 41
+text = "SAIR"
+
+[node name="Right" type="VBoxContainer" parent="Screen"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="pressed" from="Screen/Center/Bottom Text Align/Play Panel/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Screen/Center/Bottom Text Align/Quit Panel/Quit Button" to="." method="_on_quit_button_pressed"]
