@@ -40,7 +40,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.4267
 [node name="Camera Pivot" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Camera Pivot"]
-transform = Transform3D(1, -2.18557e-08, -5.85623e-09, 1.59995e-08, 0.5, 0.866026, -1.59995e-08, -0.866026, 0.5, -0.410477, 10.1094, 8)
+transform = Transform3D(1, -2.18557e-08, -5.85623e-09, 1.59995e-08, 0.5, 0.866026, -1.59995e-08, -0.866026, 0.5, -0.410477, 15.3819, 11.5915)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_u52ul")

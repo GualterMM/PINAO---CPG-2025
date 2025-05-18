@@ -11,7 +11,7 @@ extends CharacterBody3D
 @export var retreat_speed := 2.5
 
 @export_category("Combat Properties")
-@export var shoot_range := 20.0
+@export var shoot_range := 80.0
 @export var shot_cooldown := 4.0
 @export var shoot_timer := 0.0
 

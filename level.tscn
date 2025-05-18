@@ -10,8 +10,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2txt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vonw3"]
-vertices = PackedVector3Array(-29, 0.5, -2.5, -3.5, 0.5, -2.5, -3.5, 0.5, -3.25, -2.5, 0.5, -3.5, -2.5, 0.5, -29, -29, 0.5, -29, -1.25, 0.5, -2.25, 4.25, 0.5, -2.25, 4.25, 0.5, -3.25, -1.5, 0.5, -3.5, 5.5, 0.5, -3.5, 5.5, 0.5, -29, 6.5, 0.5, -3.25, 6.5, 0.5, -2.25, 30, 0.5, -2.25, 30, 0.5, -29, -3.5, 0.5, 4.75, -2.25, 0.5, 4.5, -2.25, 0.5, -1.25, -3.5, 0.5, -1.5, -29, 0.5, 5.75, -3.5, 0.5, 5.75, -1.5, 0.5, -1.25, 4.5, 0.5, -1.25, -1.25, 0.5, 4.75, 6.25, 0.5, -1.25, -1.25, 0.5, 6.5, -2.25, 0.5, 30, 30, 0.5, 30, -2.25, 0.5, 6.75, -3.25, 0.5, 6.75, -29, 0.5, 30)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 4), PackedInt32Array(4, 2, 5), PackedInt32Array(5, 2, 0), PackedInt32Array(8, 7, 6), PackedInt32Array(6, 9, 8), PackedInt32Array(8, 9, 10), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 4), PackedInt32Array(9, 3, 4), PackedInt32Array(14, 13, 12), PackedInt32Array(12, 10, 14), PackedInt32Array(14, 10, 11), PackedInt32Array(14, 11, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(19, 20, 0), PackedInt32Array(0, 1, 19), PackedInt32Array(16, 21, 20), PackedInt32Array(17, 18, 22), PackedInt32Array(7, 23, 6), PackedInt32Array(6, 23, 22), PackedInt32Array(22, 23, 24), PackedInt32Array(22, 24, 17), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 14), PackedInt32Array(27, 14, 28), PackedInt32Array(27, 29, 26), PackedInt32Array(25, 13, 14), PackedInt32Array(23, 25, 24), PackedInt32Array(24, 25, 26), PackedInt32Array(30, 29, 27), PackedInt32Array(30, 27, 21), PackedInt32Array(21, 27, 20), PackedInt32Array(20, 27, 31)]
+vertices = PackedVector3Array(-17.8751, 2, -14.2167, -26.6251, 2, -13.7167, -17.6251, 2, -13.7167, 11.3749, 2, -29.7167, 11.6249, 2, -20.2167, 12.1249, 2, -29.7167, 29.3749, 2, -8.46673, 23.1249, 2, -7.96673, 29.3749, 2, -7.71673, -17.3751, 2, -29.7167, -17.8751, 2, -29.4667, -29.6251, 2, 29.7833, -29.1251, 2, 29.7833, -29.1251, 2, -29.7167, -29.6251, 2, -29.9667, 29.1249, 2, 29.7833, 29.6249, 2, 29.7833, 29.6249, 2, -29.9667, 29.3749, 2, -29.4667, -28.3751, 1, -13.9667, -27.6251, 1, -13.9667, -27.3751, 1, -14.9667, -28.3751, 1, -28.7167, -18.8751, 1, -14.9667, -18.8751, 1, -28.7167, -12.1251, 1, -26.9667, -10.8751, 1, -27.2167, -10.8751, 1, -28.7167, -16.6251, 1, -28.7167, -16.6251, 1, -14.9667, -12.1251, 1, -14.9667, -9.87512, 1, -26.9667, 10.6249, 1, -28.7167, 8.12488, 1, -14.7167, 11.1249, 1, -19.2167, 10.6249, 1, -19.4667, -9.87512, 1, -14.9667, 16.6249, 1, -27.7167, 17.8749, 1, -27.9667, 17.8749, 1, -28.7167, 12.8749, 1, -28.7167, 12.8749, 1, -20.9667, 16.6249, 1, -20.7167, 18.8749, 1, -27.7167, 28.3749, 1, -28.7167, 18.8749, 1, -16.2167, 18.3749, 1, -15.9667, 21.6249, 1, -14.2167, 21.8749, 1, -14.7167, 28.1249, 1, -14.4667, 27.8749, 1, -12.4667, 23.8749, 1, -12.4667, 24.1249, 1, -9.21673, 28.3749, 1, -9.21673, -11.1251, 2, -13.7167, 7.12488, 2, -13.7167, -10.6251, 2, -13.9667, -11.1251, 2, -26.2167, 22.3749, 1, -9.21673, 21.8749, 1, -12.4667, 7.87488, 1, -12.7167, 7.87488, 1, -8.96673, 12.8749, 1, -1.71673, 16.6249, 1, -1.46673, 16.6249, 1, -3.21673, 12.6249, 1, -3.71673, 18.3749, 1, -3.46673, 5.62488, 1, -12.7167, 5.62488, 1, -9.21673, 7.87488, 1, -7.21673, 10.8749, 1, -3.71673, 12.6249, 1, -19.2167, 16.6249, 1, -16.2167, 7.37488, 1, -6.96673, 10.6249, 1, -3.21673, 22.1249, 1, -7.46673, -14.8751, 1, -7.46673, -12.1251, 1, -7.21673, -11.8751, 1, -9.21673, -15.1251, 1, -9.46673, -16.6251, 1, -12.9667, -12.1251, 1, -12.9667, -18.3751, 1, -12.7167, -18.1251, 1, -9.46673, -9.87512, 1, -9.21673, -9.87512, 1, -12.7167, -27.3751, 1, -12.7167, -28.3751, 1, -6.96673, -24.1251, 1, -7.21673, -24.6251, 1, -7.46673, -24.3751, 1, -9.46673, -15.8751, 2, -8.46673, -18.8751, 2, -8.46673, -16.1251, 2, -7.96673, -16.1251, 2, 14.2833, -23.6251, 2, 14.5333, -15.8751, 2, 14.7833, -11.1251, 2, -8.21673, -11.1251, 2, 4.28327, -10.6251, 2, -7.96673, 6.87488, 2, -7.96673, -28.3751, 1, 14.5333, -24.6251, 1, 14.5333, -24.3751, 1, 13.5333, -17.1251, 1, -7.21673, -17.1251, 1, 13.5333, -14.8751, 1, 3.78327, -12.1251, 1, 3.53327, 22.3749, 1, -6.96673, 18.8749, 1, -3.21673, 28.3749, 1, -6.96673, 18.8749, 1, 16.5333, 28.3749, 1, 16.5333, -2.62512, 1, 13.5333, -2.37512, 1, 14.5333, 3.12488, 1, 14.5333, 3.37488, 1, 13.5333, -10.1251, 1, 5.28327, -10.1251, 1, 9.53327, -9.87512, 1, 13.5333, 10.6249, 1, 13.5333, -9.87512, 1, -6.96673, 11.8749, 2, 14.7833, 11.8749, 2, -2.71673, 11.6249, 2, 14.2833, 4.12488, 2, 14.5333, 12.8749, 1, 14.0333, 16.6249, 1, 14.2833, -11.8751, 1, 5.28327, -14.8751, 1, 13.7833, -12.1251, 1, 9.78327, -12.1251, 1, 13.7833, -11.1251, 2, 14.7833, -3.37512, 2, 14.7833, -10.6251, 2, 14.5333, -11.1251, 2, 10.5333, -15.3751, 1, 20.2833, -15.1251, 1, 21.5333, -12.1251, 1, 21.5333, -11.8751, 1, 20.2833, -11.8751, 1, 15.7833, -15.1251, 1, 15.7833, -17.3751, 1, 15.7833, -17.3751, 1, 20.2833, -4.62512, 1, 20.2833, -4.62512, 1, 15.7833, 12.6249, 1, 15.7833, 12.3749, 1, 20.2833, 16.6249, 1, 18.5333, 5.37488, 1, 15.7833, 5.37488, 1, 20.2833, -24.3751, 1, 15.7833, -28.3751, 1, 21.7833, -24.6251, 1, 22.0333, -24.3751, 1, 20.2833, 3.37488, 1, 15.7833, -2.62512, 1, 15.7833, 18.8749, 1, 18.5333, 17.8749, 1, 18.7833, 17.8749, 1, 21.7833, 19.1249, 1, 22.0333, 19.1249, 1, 23.5333, 28.3749, 1, 23.2833, 12.8749, 1, 27.0333, 11.6249, 1, 27.2833, 11.6249, 1, 28.7833, 16.8749, 1, 28.7833, 16.8749, 1, 22.0333, 12.8749, 1, 20.5333, -23.6251, 2, 21.2833, -23.6251, 2, 26.2833, -23.1251, 2, 21.5333, -16.1251, 2, 21.5333, 11.3749, 2, 21.5333, 11.8749, 2, 26.2833, 11.8749, 2, 21.2833, -11.1251, 2, 21.2833, -11.8751, 1, 22.5333, -15.3751, 1, 22.5333, -16.6251, 1, 28.7833, -10.6251, 1, 28.7833, -16.8751, 1, 22.5333, -10.3751, 1, 22.5333, -23.3751, 1, 28.7833, -23.3751, 1, 27.2833, -24.6251, 1, 27.0333, -28.3751, 1, 28.7833, -22.3751, 1, 27.0333, -22.3751, 1, 22.5333, 10.6249, 1, 27.0333, 10.6249, 1, 22.5333, 17.6249, 2, 29.5333, 18.3749, 2, 29.7833, 18.1249, 2, 22.7833, 19.1249, 1, 28.7833, 28.3749, 1, 28.7833)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(10, 9, 0), PackedInt32Array(0, 9, 2), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(10, 13, 9), PackedInt32Array(9, 13, 14), PackedInt32Array(15, 8, 16), PackedInt32Array(16, 8, 17), PackedInt32Array(9, 14, 3), PackedInt32Array(3, 14, 17), PackedInt32Array(17, 8, 6), PackedInt32Array(17, 6, 18), PackedInt32Array(17, 18, 5), PackedInt32Array(17, 5, 3), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22), PackedInt32Array(23, 21, 24), PackedInt32Array(24, 21, 22), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 28), PackedInt32Array(30, 29, 25), PackedInt32Array(25, 29, 28), PackedInt32Array(26, 27, 31), PackedInt32Array(31, 27, 32), PackedInt32Array(35, 34, 33), PackedInt32Array(35, 33, 32), PackedInt32Array(32, 33, 31), PackedInt32Array(31, 33, 36), PackedInt32Array(38, 37, 39), PackedInt32Array(39, 37, 40), PackedInt32Array(42, 41, 37), PackedInt32Array(37, 41, 40), PackedInt32Array(38, 39, 43), PackedInt32Array(43, 39, 44), PackedInt32Array(48, 47, 45), PackedInt32Array(45, 47, 46), PackedInt32Array(48, 45, 49), PackedInt32Array(49, 45, 43), PackedInt32Array(49, 43, 44), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 53), PackedInt32Array(44, 53, 49), PackedInt32Array(53, 50, 49), PackedInt32Array(56, 55, 54), PackedInt32Array(56, 54, 57), PackedInt32Array(52, 58, 51), PackedInt32Array(51, 58, 59), PackedInt32Array(61, 60, 33), PackedInt32Array(63, 62, 64), PackedInt32Array(64, 62, 65), PackedInt32Array(66, 64, 65), PackedInt32Array(67, 60, 68), PackedInt32Array(68, 60, 61), PackedInt32Array(70, 69, 65), PackedInt32Array(65, 69, 61), PackedInt32Array(41, 42, 71), PackedInt32Array(71, 42, 72), PackedInt32Array(69, 70, 73), PackedInt32Array(73, 70, 74), PackedInt32Array(65, 61, 66), PackedInt32Array(66, 61, 33), PackedInt32Array(66, 33, 72), PackedInt32Array(66, 72, 59), PackedInt32Array(47, 59, 46), PackedInt32Array(46, 59, 72), PackedInt32Array(71, 72, 34), PackedInt32Array(34, 72, 33), PackedInt32Array(58, 75, 59), PackedInt32Array(59, 75, 66), PackedInt32Array(77, 76, 78), PackedInt32Array(78, 76, 79), PackedInt32Array(30, 81, 29), PackedInt32Array(29, 81, 80), PackedInt32Array(82, 80, 83), PackedInt32Array(83, 80, 79), PackedInt32Array(84, 78, 85), PackedInt32Array(85, 78, 81), PackedInt32Array(81, 78, 79), PackedInt32Array(81, 79, 80), PackedInt32Array(20, 86, 19), PackedInt32Array(19, 86, 87), PackedInt32Array(89, 88, 87), PackedInt32Array(89, 87, 90), PackedInt32Array(90, 87, 86), PackedInt32Array(83, 90, 82), PackedInt32Array(82, 90, 86), PackedInt32Array(85, 67, 84), PackedInt32Array(84, 67, 68), PackedInt32Array(93, 92, 91), PackedInt32Array(96, 95, 94), PackedInt32Array(94, 93, 96), PackedInt32Array(96, 93, 91), PackedInt32Array(99, 98, 97), PackedInt32Array(100, 99, 97), PackedInt32Array(102, 101, 103), PackedInt32Array(103, 101, 87), PackedInt32Array(88, 104, 87), PackedInt32Array(87, 104, 103), PackedInt32Array(103, 104, 105), PackedInt32Array(107, 106, 77), PackedInt32Array(77, 106, 76), PackedInt32Array(109, 66, 108), PackedInt32Array(108, 66, 75), PackedInt32Array(108, 110, 109), PackedInt32Array(109, 110, 111), PackedInt32Array(111, 110, 112), PackedInt32Array(115, 114, 113), PackedInt32Array(115, 113, 116), PackedInt32Array(116, 113, 117), PackedInt32Array(118, 117, 119), PackedInt32Array(119, 117, 113), PackedInt32Array(120, 116, 74), PackedInt32Array(74, 116, 73), PackedInt32Array(73, 116, 117), PackedInt32Array(73, 117, 121), PackedInt32Array(124, 123, 122), PackedInt32Array(124, 122, 125), PackedInt32Array(62, 63, 126), PackedInt32Array(126, 63, 127), PackedInt32Array(107, 128, 106), PackedInt32Array(106, 128, 130), PackedInt32Array(106, 130, 129), PackedInt32Array(117, 118, 128), PackedInt32Array(128, 118, 130), PackedInt32Array(130, 131, 129), PackedInt32Array(134, 133, 132), PackedInt32Array(134, 132, 135), PackedInt32Array(137, 136, 138), PackedInt32Array(138, 136, 139), PackedInt32Array(139, 136, 141), PackedInt32Array(139, 141, 140), PackedInt32Array(143, 142, 136), PackedInt32Array(136, 142, 141), PackedInt32Array(131, 140, 129), PackedInt32Array(129, 140, 141), PackedInt32Array(140, 145, 139), PackedInt32Array(139, 145, 144), PackedInt32Array(126, 127, 146), PackedInt32Array(146, 127, 148), PackedInt32Array(146, 148, 147), PackedInt32Array(150, 149, 147), PackedInt32Array(147, 149, 146), PackedInt32Array(102, 151, 101), PackedInt32Array(101, 151, 154), PackedInt32Array(101, 154, 153), PackedInt32Array(101, 153, 152), PackedInt32Array(151, 142, 154), PackedInt32Array(154, 142, 143), PackedInt32Array(155, 149, 150), PackedInt32Array(144, 145, 156), PackedInt32Array(115, 155, 114), PackedInt32Array(114, 155, 156), PackedInt32Array(156, 155, 144), PackedInt32Array(144, 155, 150), PackedInt32Array(158, 157, 159), PackedInt32Array(159, 157, 160), PackedInt32Array(162, 161, 160), PackedInt32Array(157, 111, 160), PackedInt32Array(160, 111, 112), PackedInt32Array(160, 112, 162), PackedInt32Array(164, 163, 165), PackedInt32Array(165, 163, 166), PackedInt32Array(159, 167, 158), PackedInt32Array(158, 167, 148), PackedInt32Array(148, 167, 168), PackedInt32Array(168, 167, 163), PackedInt32Array(163, 167, 166), PackedInt32Array(168, 147, 148), PackedInt32Array(171, 170, 169), PackedInt32Array(172, 171, 169), PackedInt32Array(175, 174, 173), PackedInt32Array(175, 173, 176), PackedInt32Array(138, 177, 137), PackedInt32Array(137, 177, 178), PackedInt32Array(178, 177, 180), PackedInt32Array(178, 180, 179), PackedInt32Array(179, 181, 178), PackedInt32Array(177, 182, 180), PackedInt32Array(184, 183, 185), PackedInt32Array(185, 183, 186), PackedInt32Array(153, 185, 152), PackedInt32Array(152, 185, 186), PackedInt32Array(184, 187, 183), PackedInt32Array(183, 187, 179), PackedInt32Array(188, 181, 187), PackedInt32Array(187, 181, 179), PackedInt32Array(164, 165, 189), PackedInt32Array(189, 165, 180), PackedInt32Array(190, 189, 182), PackedInt32Array(182, 189, 180), PackedInt32Array(193, 192, 191), PackedInt32Array(194, 161, 195), PackedInt32Array(195, 161, 162)]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u52ul"]
 
@@ -50,89 +50,424 @@ shadow_enabled = true
 
 [node name="Enemy Spawn Regions" type="Node" parent="."]
 
-[node name="West Spawn" type="Area3D" parent="Enemy Spawn Regions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2, 0)
+[node name="C1 SPAWN" type="Area3D" parent="Enemy Spawn Regions"]
+transform = Transform3D(1.55791, 0, 0, 0, 1, 0, 0, 0, 1.45811, -78.1816, 8.37225, -79.0026)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/West Spawn"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/C1 SPAWN"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_f2txt")
 
-[node name="East Spawn" type="Area3D" parent="Enemy Spawn Regions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2, 0)
+[node name="C3 SPAWN" type="Area3D" parent="Enemy Spawn Regions"]
+transform = Transform3D(1.99815, 0, 0, 0, 1, 0, 0, 0, 1.93, 69.8457, 8.37225, -78.4252)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/East Spawn"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/C3 SPAWN"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_f2txt")
 
-[node name="North Spawn" type="Area3D" parent="Enemy Spawn Regions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 28)
+[node name="C6 SPAWN" type="Area3D" parent="Enemy Spawn Regions"]
+transform = Transform3D(3.08133, 0, 0, 0, 1, 0, 0, 0, 3.80734, 73.8557, 8.67196, 71.9634)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/North Spawn"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/C6 SPAWN"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_f2txt")
 
-[node name="South Spawm" type="Area3D" parent="Enemy Spawn Regions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -28)
+[node name="C7 SPAWN" type="Area3D" parent="Enemy Spawn Regions"]
+transform = Transform3D(3.184, 0, 0, 0, 1, 0, 0, 0, 2.44839, 0, 8.37225, 80.8066)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/South Spawm"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/C7 SPAWN"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_f2txt")
+
+[node name="C4 SPAWN" type="Area3D" parent="Enemy Spawn Regions"]
+transform = Transform3D(2.34547, 0, 0, 0, 1, 0, 0, 0, 2.88532, -62.1057, 8.37225, 9.84432)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Spawn Regions/C4 SPAWN"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_f2txt")
 
 [node name="Environment" type="NavigationRegion3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_vonw3")
 
-[node name="TestObstacle" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26723, 0.576016, -2.48692)
+[node name="Muro Oeste" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 60.33, -29.5832, 1.02589, -0.0632668)
 collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_u52ul")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/TestObstacle"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Muro Oeste"]
 material_override = SubResource("StandardMaterial3D_vonw3")
 mesh = SubResource("BoxMesh_oi3di")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/TestObstacle"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Muro Oeste"]
 shape = SubResource("BoxShape3D_0b4ue")
 
-[node name="TestObstacle2" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38072, 0.576016, -2.48692)
+[node name="Muro Sul" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 60.33, 0, 1, 0, -1, 0, -2.63711e-06, 0.0398788, 1.02589, 29.797)
 collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_u52ul")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/TestObstacle2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Muro Sul"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_vonw3")
 mesh = SubResource("BoxMesh_oi3di")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/TestObstacle2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Muro Sul"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 shape = SubResource("BoxShape3D_0b4ue")
 
-[node name="TestObstacle3" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26723, 0.576016, 5.64541)
+[node name="Muro Norte" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 60.33, 0, 1, 0, -1, 0, -2.63711e-06, 0.0398788, 1.02589, -29.8474)
 collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_u52ul")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/TestObstacle3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Muro Norte"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_vonw3")
 mesh = SubResource("BoxMesh_oi3di")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/TestObstacle3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Muro Norte"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="Muro Leste" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 60.33, 29.4771, 1.02589, -0.0632668)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Muro Leste"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Muro Leste"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C1P1" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 16.8752, -17.7565, 1.11991, -21.7829)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C1P1"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C1P1"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C1P2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 9.54084, 0, 1, 0, -1, 0, -4.17043e-07, -22.1239, 1.11991, -13.835)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C1P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C1P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C2P1" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10.7168, 11.8578, 1.11991, -25.1083)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C2P1"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C2P1"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C2P2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 18.7059, 0, 1, 0, -1, 0, -8.1766e-07, -1.84941, 1.11991, -13.835)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C2P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C2P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C2P3" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13.3239, -10.9901, 1.11991, -20.0176)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C2P3"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C2P3"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C3P1" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10.7168, 17.8286, 1.11991, -22.0437)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C3P1"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C3P1"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C3P2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 5.16415, 0, 1, 0, -1, 0, -2.25732e-07, 24.9536, 1.11991, -13.5677)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C3P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C3P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C4P1" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 8.17821, 0, 1, 0, -1, 0, -3.57481e-07, -19.9553, 1.11991, 14.7015)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C4P1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C4P1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C4P2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 3.4351, 0, 1, 0, -1, 0, -1.50153e-07, -22.3238, 1.11991, -8.37525)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C4P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C4P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C4P3" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 3.4351, 0, 1, 0, -1, 0, -1.50153e-07, -17.4257, 1.11991, -8.37525)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C4P3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C4P3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C5P1" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18.2165, 11.8578, 1.11991, 6.0378)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C5P1"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C5P1"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C5P2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 18.7059, 0, 1, 0, -1, 0, -8.1766e-07, -2.20598, 1.11991, -8.0634)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C5P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C5P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C5P3" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13.3239, -11.1123, 1.11991, -1.91642)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C5P3"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C5P3"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C4P4" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 23.9341, -16.0243, 1.11991, 3.31607)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C4P4"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C4P4"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C5P4" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 8.17821, 0, 1, 0, -1, 0, -3.57481e-07, 7.77423, 1.11991, 14.6429)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C5P4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C5P4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C5P5" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 8.17821, 0, 1, 0, -1, 0, -3.57481e-07, -7.05864, 1.11991, 14.6429)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C5P5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C5P5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C5P6" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5.06575, -11.0994, 1.11991, 12.5812)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C5P6"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C5P6"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C6P1" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20.8598, 17.8286, 1.11991, 7.69895)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C6P1"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C6P1"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C6P2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 7.01592, 17.9426, 1.11539, 25.9635)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C6P2"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C6P2"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C6P3" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 6.76154, 0, 1, 0, -1, 0, -2.95556e-07, 26.0285, 1.11991, -8.00642)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C6P3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C6P3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C7P1" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5.54612, 11.8578, 1.11991, 23.8301)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C7P1"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C7P1"]
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C7P2" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 23.5829, 0, 1, 0, -1, 0, -1.03084e-06, 0.410336, 1.11991, 21.5166)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C7P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C7P2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C7P3" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(-4.37114e-08, 0, 8.17821, 0, 1, 0, -1, 0, -3.57481e-07, -19.9553, 1.11991, 21.5166)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C7P3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C7P3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0b4ue")
+
+[node name="C7P4" type="StaticBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5.54612, -23.584, 1.11991, 23.8301)
+collision_mask = 31
+physics_material_override = SubResource("PhysicsMaterial_u52ul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/C7P4"]
+material_override = SubResource("StandardMaterial3D_vonw3")
+mesh = SubResource("BoxMesh_oi3di")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/C7P4"]
 shape = SubResource("BoxShape3D_0b4ue")
 
 [node name="World Env" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0.5)
 use_collision = true
 size = Vector3(60, 1, 60)
 
 [node name="Player Layer" type="Node" parent="."]
 
 [node name="Player" parent="Player Layer" instance=ExtResource("1_u52ul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68812, -71.9199)
 
 [node name="Enemies Layer" type="Node" parent="."]
 
 [node name="Enemy Spawn Controller" parent="." instance=ExtResource("6_1ainy")]
 
 [node name="Win Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 120.0
 one_shot = true
 autostart = true
 
