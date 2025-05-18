@@ -45,6 +45,7 @@ var reload_total_time: float
 var weapon_ref
 var no_ammo: bool = false
 var weapon_jammed: bool = false
+var first_sabotage: bool = false
 
 func _process(delta: float) -> void:
 	if reload_timer and reload_timer.is_stopped() == false:
@@ -81,6 +82,8 @@ func _ready() -> void:
 	sab_jam.hide()
 	sab_lock.hide()
 	sab_vision.hide()
+	$"Center/Timer Panel/daqui_pra_frente".hide()
+	$"Center/Timer Panel/so_pra_tras".hide()
 
 func death():
 	dead_face.show()
@@ -168,6 +171,13 @@ func update_level_timer() -> void:
 	var minutes = time_left / 60
 	var seconds = time_left % 60
 	level_timer_label.text = "Time Left: %02d:%02d" % [minutes, seconds]
+	if (first_sabotage == false && time_left == 160):
+		$"Center/Timer Panel/daqui_pra_frente".show()
+		$"Center/Timer Panel/so_pra_tras".show()
+	if (first_sabotage == false && time_left == 150):
+		$"Center/Timer Panel/daqui_pra_frente".hide()
+		$"Center/Timer Panel/so_pra_tras".hide()
+		first_sabotage = true
 	
 func _on_reload_started(total_time: float) -> void:
 	reload_total_time = total_time
