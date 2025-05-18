@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mfr2gf0641cc" path="res://scenes/ui/end_screen.tscn" id="2_f2txt"]
 [ext_resource type="Texture2D" uid="uid://b1nyvuu4bu0hw" path="res://scenes/assets/visual_impair_shader/obscure effect.png" id="4_1ainy"]
 [ext_resource type="Texture2D" uid="uid://bilpwwwihda21" path="res://scenes/assets/texture/Rocks001_4K-JPG_Color.jpg" id="5_i2t4f"]
-[ext_resource type="Shader" uid="uid://p5mr6hc0u5o3" path="res://level.gdshader" id="5_n6hdu"]
+[ext_resource type="Shader" path="res://level.gdshader" id="5_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://dsv16wi6de16d" path="res://scenes/controllers/enemy_spawn_controller.tscn" id="6_1ainy"]
 [ext_resource type="Texture2D" uid="uid://dsd5mi70ud7ja" path="res://scenes/assets/texture/water.png" id="6_km5ld"]
 
