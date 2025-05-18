@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var move_speed := 10.5;
 @export var acceleration := 90;
-@export var max_health := 100;
+@export var max_health := 10;
 
 @onready var camera = $"Camera Pivot/Camera3D"
 @onready var body = $UntitledGoose

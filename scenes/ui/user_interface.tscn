@@ -54,6 +54,43 @@ text = "Time Left: 00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="daqui_pra_frente" type="Label" parent="Center/Timer Panel"]
+layout_mode = 2
+offset_left = 81.0
+offset_top = 142.0
+offset_right = 190.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Daqui Pra Frente, só Pra tras"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sabs" type="HBoxContainer" parent="Center"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="SabControle" type="Sprite2D" parent="Center/Sabs"]
+position = Vector2(-25, -154)
+texture = ExtResource("9_2pyj2")
+
+[node name="SabInércia" type="Sprite2D" parent="Center/Sabs"]
+position = Vector2(-81, -154)
+texture = ExtResource("10_fve8i")
+
+[node name="SabJam" type="Sprite2D" parent="Center/Sabs"]
+position = Vector2(-137, -154)
+texture = ExtResource("11_0nkc2")
+
+[node name="SabLock" type="Sprite2D" parent="Center/Sabs"]
+position = Vector2(-193, -154)
+texture = ExtResource("12_isdaw")
+
+[node name="SabVision" type="Sprite2D" parent="Center/Sabs"]
+position = Vector2(-249, -154)
+texture = ExtResource("13_gdqgt")
+
 [node name="Important Section" type="MarginContainer" parent="Center"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -207,31 +244,6 @@ texture = ExtResource("4_vo76m")
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
-
-[node name="Sabs" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 2
-
-[node name="SabControle" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
-position = Vector2(-33, 33)
-texture = ExtResource("9_2pyj2")
-
-[node name="SabInércia" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
-position = Vector2(-89, 33)
-texture = ExtResource("10_fve8i")
-
-[node name="SabJam" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
-position = Vector2(-145, 33)
-texture = ExtResource("11_0nkc2")
-
-[node name="SabLock" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
-position = Vector2(-201, 33)
-texture = ExtResource("12_isdaw")
-
-[node name="SabVision" type="Sprite2D" parent="HBoxContainer/VBoxContainer2/Sabs"]
-position = Vector2(-257, 33)
-texture = ExtResource("13_gdqgt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2

@@ -31,11 +31,13 @@ extends Control
 @onready var dead_face: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/DEAD_FACE"
 @onready var face: Sprite2D = $"HBoxContainer/Left Side/HBoxContainer/FACE"
 
-@onready var sab_controle: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabControle
-@onready var sab_inercia: Sprite2D = $"HBoxContainer/VBoxContainer2/Sabs/SabInércia"
-@onready var sab_jam: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabJam
-@onready var sab_lock: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabLock
-@onready var sab_vision: Sprite2D = $HBoxContainer/VBoxContainer2/Sabs/SabVision
+@onready var sab_controle: Sprite2D = $Center/Sabs/SabControle
+@onready var sab_inercia: Sprite2D = $"Center/Sabs/SabInércia"
+@onready var sab_jam: Sprite2D = $Center/Sabs/SabJam
+@onready var sab_lock: Sprite2D = $Center/Sabs/SabLock
+@onready var sab_vision: Sprite2D = $Center/Sabs/SabVision
+
+@onready var tema: Label = $"Center/Timer Panel/daqui_pra_frente"
 
 var reload_timer: Timer
 var reload_total_time: float
@@ -54,6 +56,7 @@ func _process(delta: float) -> void:
 		
 func _ready() -> void:
 	player_damage_controller.health_changed.connect(_on_health_changed)
+	GlobalSabotageManager.sabotage_toggled.connect(_on_sabotage_toggle)
 	reload_panel.hide()
 	reloading_bar.hide()
 	weapon_status_panel.hide()
@@ -240,3 +243,31 @@ func _on_weapon_jammed(is_jammed: bool):
 		weapon_jammed = true
 	else:
 		weapon_jammed = false
+
+func _on_sabotage_toggle(id: String, enabled: bool):
+	if (id == 'sab_vision_impair'):
+		if (enabled):
+			sab_vision.show()
+		else:
+			sab_vision.hide()
+	if (id == 'sab_control_invert'):
+		if (enabled):
+			sab_controle.show()
+		else:
+			sab_controle.hide()
+	if (id == 'sab_weapon_jam'):
+		if (enabled):
+			sab_jam.show()
+		else:
+			sab_jam.hide()
+	if (id == 'sab_weapon_lock'):
+		if (enabled):
+			sab_lock.show()
+		else:
+			sab_lock.hide()
+	if (id == 'sab_movement_inertia'):
+		if (enabled):
+			sab_inercia.show()
+		else:
+			sab_inercia.hide()
+	return;
