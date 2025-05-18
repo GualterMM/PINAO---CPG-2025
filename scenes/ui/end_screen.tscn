@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://mfr2gf0641cc"]
+[gd_scene load_steps=5 format=3 uid="uid://mfr2gf0641cc"]
 
 [ext_resource type="Script" uid="uid://bjcjlssafwgj" path="res://scenes/ui/end_screen.gd" id="1_4ttpn"]
+[ext_resource type="FontFile" uid="uid://dmxbkaixlpjrr" path="res://scenes/assets/fonts/RubikGlitch-Regular.ttf" id="2_n8r4t"]
+[ext_resource type="FontFile" uid="uid://dyx72niys3jej" path="res://scenes/assets/fonts/Rubik-Bold.ttf" id="2_wgyui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53v5j"]
 
 [node name="End Screen" type="Control"]
 layout_mode = 3
@@ -25,18 +29,44 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 
 [node name="Result Panel" type="Panel" parent="Aligner/VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxEmpty_53v5j")
 
-[node name="Label" type="Label" parent="Aligner/VBoxContainer/Result Panel"]
+[node name="you_label" type="Label" parent="Aligner/VBoxContainer/Result Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -9.0
+offset_right = -92.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You win!"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wgyui")
+theme_override_font_sizes/font_size = 100
+text = "You"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="won_label" type="Label" parent="Aligner/VBoxContainer/Result Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 101.0
+offset_top = -8.0
+offset_right = 167.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.980392, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n8r4t")
+theme_override_font_sizes/font_size = 100
+text = " won!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
