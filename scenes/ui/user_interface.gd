@@ -54,6 +54,7 @@ func _process(delta: float) -> void:
 		
 func _ready() -> void:
 	player_damage_controller.health_changed.connect(_on_health_changed)
+	GlobalSabotageManager.sabotage_toggled.connect(_on_sabotage_toggle)
 	reload_panel.hide()
 	reloading_bar.hide()
 	weapon_status_panel.hide()
@@ -240,3 +241,31 @@ func _on_weapon_jammed(is_jammed: bool):
 		weapon_jammed = true
 	else:
 		weapon_jammed = false
+
+func _on_sabotage_toggle(id: String, enabled: bool):
+	if (id == 'sab_vision_impair'):
+		if (enabled):
+			sab_vision.show()
+		else:
+			sab_vision.hide()
+	if (id == 'sab_control_invert'):
+		if (enabled):
+			sab_controle.show()
+		else:
+			sab_controle.hide()
+	if (id == 'sab_weapon_jam'):
+		if (enabled):
+			sab_jam.show()
+		else:
+			sab_jam.hide()
+	if (id == 'sab_weapon_lock'):
+		if (enabled):
+			sab_lock.show()
+		else:
+			sab_lock.hide()
+	if (id == 'sab_movement_inertia'):
+		if (enabled):
+			sab_inercia.show()
+		else:
+			sab_inercia.hide()
+	return;

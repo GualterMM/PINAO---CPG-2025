@@ -116,7 +116,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 shape = SubResource("BoxShape3D_0b4ue")
 
 [node name="Muro Norte" type="StaticBody3D" parent="Environment"]
-transform = Transform3D(-4.37114e-08, 0, 60.33, 0, 1, 0, -1, 0, -2.63711e-06, 0.0398788, 1.02589, -29.8474)
+transform = Transform3D(-4.37114e-08, 0, 60.33, 0, 1, 0, -1, 0, -2.63711e-06, 0.0398788, 1.02589, -29.6364)
 collision_mask = 31
 physics_material_override = SubResource("PhysicsMaterial_u52ul")
 
