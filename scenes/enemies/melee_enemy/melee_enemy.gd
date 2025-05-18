@@ -4,11 +4,11 @@ extends CharacterBody3D
 @onready var attack_cooldown_timer: Timer = $"Attack Cooldown Timer"
 
 @export_category("Movement Properties")
-@export var speed := 10.0
-@export var acceleration := 30.0
-@export var min_distance_to_target := 7.0
-@export var buffer_distance := 1.0
-@export var retreat_speed := 2.5
+@export var speed := 99999999999.0
+@export var acceleration := 18.0
+@export var min_distance_to_target := 21.0
+@export var buffer_distance := 3.0
+@export var retreat_speed := 7.5
 
 @export_category("Combat Properties")
 @export var attack_distance := 1.5
