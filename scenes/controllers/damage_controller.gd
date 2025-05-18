@@ -15,11 +15,8 @@ func _ready() -> void:
 	current_health_points = max_health_points
 	if is_player:
 		emit_signal("health_changed", current_health_points, max_health_points)
-	
-	print("Max Health: ", max_health_points, "Current Health: ", current_health_points)
 func take_damage(damage: float):
 	current_health_points -= damage
-	print("I'm hit! (", current_health_points, "/", max_health_points, ")")
 	
 	if is_player:
 		emit_signal("health_changed", current_health_points, max_health_points)

@@ -121,6 +121,7 @@ func attack_target():
 	attack_cooldown_timer.start()
 
 func _on_damage_controller_death_signal() -> void:
+	GameState.add_kill_to_count()
 	queue_free()
 
 func _on_attack_cooldown_timer_timeout() -> void:

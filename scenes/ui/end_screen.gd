@@ -16,10 +16,9 @@ func _ready() -> void:
 	points_label.text = "Points: %d" % [GameState.total_points]
 
 func _on_restart_button_pressed() -> void:
-	GameState.reset_points()
+	GameState.reset_game_state()
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_quit_button_pressed() -> void:
-	GameState.reset_points()
 	get_tree().quit()

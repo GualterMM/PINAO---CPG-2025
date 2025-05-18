@@ -101,7 +101,6 @@ func _handle_input():
 		GlobalSabotageManager.toggle_sabotage("sab_weapon_jam", !currently_active)
 
 func _on_death():
-	print("You died!")
 	set_process(false)
 	set_physics_process(false)
 	
@@ -112,6 +111,5 @@ func _on_death():
 			child.visible = false  # or just fade via animation
 
 func _on_sabotage_toggled(id: String, enabled: bool):
-	print("Sabotage in effect: ", id, enabled)
 	if(id == "sab_invert_controls"):
 		inverted_controls = enabled
