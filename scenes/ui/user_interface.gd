@@ -145,29 +145,29 @@ func update_ammo(current: int, max: int):
 	else:
 		no_ammo = false
 		
-	ammo_label.text = "Ammo: %d/%d" % [current, max]
+	ammo_label.text = "Balas: %d/%d" % [current, max]
 
 func update_weapon_status_panel() -> void:
 	if(weapon_jammed or no_ammo):
 		weapon_status_panel.visible = true
 		if(no_ammo):
-			weapon_status_label.text = "Out of ammo!"
+			weapon_status_label.text = "Sem munição!"
 			return
 		if(weapon_jammed):
-			weapon_status_label.text = "Weapon jammed! Reload to unjam"
+			weapon_status_label.text = "A arma travou! Recarregue para continuar"
 			return
 	else:
 		weapon_status_panel.visible = false
 		
 
 func update_player_points() -> void:
-	player_points_label.text = "Points: %d" % [GameState.total_points]
+	player_points_label.text = "Pontos: %d" % [GameState.total_points]
 	
 func update_level_timer() -> void:
 	var time_left = int(ceil(level_timer.time_left))
 	var minutes = time_left / 60
 	var seconds = time_left % 60
-	level_timer_label.text = "Time Left: %02d:%02d" % [minutes, seconds]
+	level_timer_label.text = "Tempo restante: %02d:%02d" % [minutes, seconds]
 	
 func _on_reload_started(total_time: float) -> void:
 	reload_total_time = total_time
