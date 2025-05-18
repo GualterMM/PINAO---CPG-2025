@@ -13,6 +13,7 @@ enum Faction {
 }
 
 @export var bullet_scene: PackedScene
+@export var damage: float = 5
 @export var muzzle_speed: int = 50
 @export var seconds_between_shots: float = 4
 @export var ammo_capacity: int = 4
@@ -52,6 +53,7 @@ func shoot():
 	
 	bullet.look_at(bullet.global_position)
 	bullet.speed = muzzle_speed
+	bullet.damage = damage
 
 func _on_timer_timeout() -> void:
 	can_shoot = true;

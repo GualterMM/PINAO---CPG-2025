@@ -4,9 +4,9 @@ extends CharacterBody3D
 @onready var gun_controller: Node = $"AI Gun Controller"
 
 @export_category("Movement Properties")
-@export var speed := 5.0
-@export var acceleration := 10.0
-@export var min_distance_to_target := 4.0
+@export var speed := 8.0
+@export var acceleration := 15.0
+@export var min_distance_to_target := 6.0
 @export var buffer_distance := 1.0
 @export var retreat_speed := 2.5
 

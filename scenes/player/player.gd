@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var move_speed := 10;
-@export var acceleration := 40;
+@export var move_speed := 10.5;
+@export var acceleration := 90;
 @export var max_health := 100;
 
 var health := max_health;
