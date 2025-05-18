@@ -1,6 +1,7 @@
 extends Node3D
 
 signal ammo_changed(current: int, max: int)
+signal weapon_jammed(is_jammed: bool)
 signal reloading_started(total_time: float)
 signal reloading_ended()
 
@@ -24,15 +25,13 @@ enum Faction {
 @export var num_pellets: int = 5;
 @export var spread_angle_degrees: float = 10.0
 @export var fire_mode: FireMode = FireMode.SEMI_AUTO
+@export var weapon_jam_chance: float = 0.25
 
 var current_ammo := ammo_capacity
 var can_shoot = true
 var is_reloading = false
 var trigger_released = true
-var faction: Faction = Faction.PLAYER
-
-func set_faction(f: Faction):
-	faction = f
+var jammed = false
 
 func _ready() -> void:
 	emit_ammo_update()
@@ -40,8 +39,14 @@ func _ready() -> void:
 	reload_timer.wait_time = reload_time
 	
 func shoot():
-	if (not can_shoot or is_reloading or current_ammo <= 0):
+	if (not can_shoot or is_reloading or current_ammo <= 0 or jammed):
 		return
+	
+	if GlobalSabotageManager.is_active("sab_weapon_jam"):
+		if randf() < weapon_jam_chance:
+			jammed = true
+			emit_signal("weapon_jammed", true)
+			return
 	
 	var scene_root = get_tree().current_scene;
 	can_shoot = false
@@ -54,9 +59,6 @@ func shoot():
 		var bullet = bullet_scene.instantiate()
 		scene_root.add_child(bullet)
 		bullet.global_position = muzzle.global_position
-		
-		if "set_faction" in bullet:
-			bullet.set_faction(faction)  # weapon passes its faction
 		
 		var spread_dir = -muzzle.global_transform.basis.z.rotated(Vector3.UP, deg_to_rad(angle_deg)).normalized()
 		
@@ -90,7 +92,7 @@ func get_spread_angles(pellet_count: int, total_spread_deg: float) -> Array[floa
 	return angles
 
 func reload():
-	if (is_reloading or current_ammo == ammo_capacity):
+	if is_reloading or (current_ammo == ammo_capacity and !jammed):
 		return
 	
 	is_reloading = true
@@ -114,8 +116,10 @@ func _on_reload_timer_timeout() -> void:
 	current_ammo = ammo_capacity
 	is_reloading = false
 	can_shoot = true
+	jammed = false
 	emit_ammo_update()
 	emit_signal("reloading_ended")
+	emit_signal("weapon_jammed", true)
 	
 func emit_ammo_update():
 	emit_signal("ammo_changed", current_ammo, ammo_capacity)

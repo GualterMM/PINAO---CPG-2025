@@ -1,6 +1,7 @@
 extends Node3D
 
 signal ammo_changed(current: int, max: int)
+signal weapon_jammed(is_jammed: bool)
 signal reloading_started(total_time: float)
 signal reloading_ended()
 
@@ -22,15 +23,13 @@ enum Faction {
 @export var ammo_capacity: int = 11
 @export var reload_time: float = 2 # Seconds
 @export var fire_mode: FireMode = FireMode.SEMI_AUTO
+@export var weapon_jam_chance: float = 0.1
 
 var current_ammo := ammo_capacity
 var can_shoot = true
 var is_reloading = false
 var trigger_released = true
-var faction: Faction = Faction.PLAYER
-
-func set_faction(f: Faction):
-	faction = f
+var jammed: bool = false
 
 func _ready() -> void:
 	emit_ammo_update()
@@ -38,8 +37,14 @@ func _ready() -> void:
 	reload_timer.wait_time = reload_time
 	
 func shoot():
-	if (not can_shoot or is_reloading or current_ammo <= 0):
+	if (not can_shoot or is_reloading or current_ammo <= 0 or jammed):
 		return
+	
+	if GlobalSabotageManager.is_active("sab_weapon_jam"):
+		if randf() < weapon_jam_chance:
+			emit_signal("weapon_jammed", true)
+			jammed = true
+			return
 	
 	var scene_root = get_tree().current_scene;
 	can_shoot = false
@@ -48,8 +53,6 @@ func shoot():
 	emit_ammo_update()
 	
 	var bullet = bullet_scene.instantiate()
-	if "set_faction" in bullet:
-		bullet.set_faction(faction)
 		
 	scene_root.add_child(bullet)
 	bullet.global_transform = muzzle.global_transform
@@ -68,11 +71,13 @@ func _on_reload_timer_timeout() -> void:
 	current_ammo = ammo_capacity
 	is_reloading = false
 	can_shoot = true
+	jammed = false
 	emit_ammo_update()
 	emit_signal("reloading_ended")
+	emit_signal("weapon_jammed", false)
 
 func reload():
-	if (is_reloading or current_ammo == ammo_capacity):
+	if is_reloading or (current_ammo == ammo_capacity and !jammed):
 		return
 	
 	is_reloading = true

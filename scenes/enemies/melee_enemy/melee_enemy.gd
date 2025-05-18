@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Attack logic
 	var distance_to_player = global_position.distance_to(target.global_position)
-	print("Distance to player: ", distance_to_player, "Attack Distance: ", attack_distance)
 	if distance_to_player <= attack_distance and can_attack:
 		attack_target()
 		return # Skip movement this frame
@@ -115,7 +114,6 @@ func attack_target():
 	if (!target_damage_controller): 
 		return
 	
-	print("Melee enemy attacking player!")
 	target_damage_controller.take_damage(damage)
 	can_attack = false
 	velocity = Vector3.ZERO # stop movement for this frame
