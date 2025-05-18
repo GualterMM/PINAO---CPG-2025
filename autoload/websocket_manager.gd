@@ -42,6 +42,7 @@ func _process(_delta: float) -> void:
 				# Get relevant server information
 				var session_id = json_message.gameState.sessionId
 				var available_sabotages = json_message.sabotages.availableSabotagePool
+				var active_sabotages = json_message.sabotages.activeSabotagePool
 				var sabotage_queue = json_message.sabotages.sabotageQueue
 				
 				if(session_id):
@@ -52,6 +53,11 @@ func _process(_delta: float) -> void:
 				
 				if(sabotage_queue):
 					GameState.sabotage_queue = sabotage_queue
+					
+				if(active_sabotages):
+					for sabotage in active_sabotages:
+						if sabotage.has("id"):
+							GlobalSabotageManager.toggle_sabotage(sabotage.id, true)
 			
 			print(websocket.get_packet().get_string_from_ascii())
 	elif state == WebSocketPeer.STATE_CLOSING:

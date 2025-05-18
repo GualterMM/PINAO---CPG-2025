@@ -81,8 +81,8 @@ func _handle_input():
 		gun_controller.switch_weapon_by_index(3)
 		
 	if Input.is_action_just_pressed("sabotage_debug_1"):
-		var currently_active = GlobalSabotageManager.is_active("sab_invert_controls")
-		GlobalSabotageManager.toggle_sabotage("sab_invert_controls", !currently_active)
+		var currently_active = GlobalSabotageManager.is_active("sab_control_invert")
+		GlobalSabotageManager.toggle_sabotage("sab_control_invert", !currently_active)
 	
 	if Input.is_action_just_pressed("sabotage_debug_2"):
 		var currently_active = GlobalSabotageManager.is_active("sab_vision_impair")
@@ -111,5 +111,5 @@ func _on_death():
 			child.visible = false  # or just fade via animation
 
 func _on_sabotage_toggled(id: String, enabled: bool):
-	if(id == "sab_invert_controls"):
+	if(id == "sab_control_invert"):
 		inverted_controls = enabled

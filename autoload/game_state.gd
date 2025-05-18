@@ -1,12 +1,12 @@
 extends Node
 
 # GameState variables
-var session_id: String = "session id here"
+var session_id: String = "No session ID found :c"
 var player_name: String = "Alpha_Test"
-var game_status: String = "setup" # setup | active | paused | over
+var game_status: String = "active" # setup | active | paused | over
 var game_duration: int = 0
 var current_duration: int = 0
-var grace_duration: int = 0
+var grace_duration: int = 15000
 var max_sabotage_limit: int = 3
 var current_sabotage_limit: int = 1
 var can_receive_sabotage: bool = true
@@ -61,16 +61,16 @@ func set_grace_period(grace_period_in_millis: float):
 
 func get_payload() -> String:
 	if win_timer_node:
-		current_duration = int(win_timer_node.time_left * 1000.0)
-		current_duration = (current_duration / 1000) * 1000
 		game_duration = int(win_timer_node.wait_time * 1000) # Convert to ms
-	
+		current_duration = int(win_timer_node.time_left * 1000.0)
+		current_duration = game_duration - ((current_duration / 1000) * 1000)
+		
 	if player_node:
 		player_points = total_points
 		player_kills = total_kills
 		player_time_survived = current_duration
 		
-	if (grace_duration <= current_duration || active_sabotages.size() != 0):
+	if (current_duration <= grace_duration):
 		can_receive_sabotage = false
 	else:
 		can_receive_sabotage = true
