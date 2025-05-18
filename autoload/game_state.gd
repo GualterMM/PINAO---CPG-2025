@@ -81,6 +81,7 @@ func get_payload() -> String:
 	var payload := {
 		"gameState": {
 			"sessionId": session_id,
+			"playerName": player_name,
 			"status": game_status,
 			"gameDuration": game_duration,
 			"currentDuration": current_duration,
