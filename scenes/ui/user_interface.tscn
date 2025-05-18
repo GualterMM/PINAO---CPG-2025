@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://b1h44yr66wwyu"]
+[gd_scene load_steps=15 format=3 uid="uid://b1h44yr66wwyu"]
 
 [ext_resource type="Script" uid="uid://vb0cn3sce025" path="res://scenes/ui/user_interface.gd" id="1_284y0"]
+[ext_resource type="FontFile" uid="uid://dmxbkaixlpjrr" path="res://scenes/assets/fonts/RubikGlitch-Regular.ttf" id="2_fve8i"]
 [ext_resource type="Texture2D" uid="uid://dadpejupj8w46" path="res://scenes/weapons/icons/Icon_AK.png" id="2_rcgkl"]
 [ext_resource type="Texture2D" uid="uid://b8so3iww3sn2p" path="res://scenes/assets/health_bar_icons/Icon_Life.png" id="2_vo76m"]
 [ext_resource type="Texture2D" uid="uid://dup8o1q0lsuyq" path="res://scenes/assets/health_bar_icons/Icon_Goose.png" id="2_xg44s"]
@@ -62,11 +63,26 @@ offset_right = 190.0
 offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Daqui Pra Frente, só Pra tras"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "DAQUI PRA FRENTE,"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="so_pra_tras" type="Label" parent="Center/Timer Panel"]
+offset_left = 37.0
+offset_top = 166.0
+offset_right = 240.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0.796078, 0, 0.682353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fve8i")
+theme_override_font_sizes/font_size = 30
+text = "SÓ PRA TRÁS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Sabs" type="HBoxContainer" parent="Center"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
