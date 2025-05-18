@@ -1,6 +1,6 @@
 extends Node
 
-@export var server_url := "ws://localhost:8080/ws/game"
+@export var server_url := "wss://pinao-backend.fly.dev/ws/game" # wss://pinao-backend.fly.dev/ws/game
 @export var level_path := "res://level.tscn" # Adjust as needed
 
 var websocket := WebSocketPeer.new()
@@ -8,6 +8,7 @@ var is_connected := false
 var send_timer := Timer.new()
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	send_timer.wait_time = 1.0
 	send_timer.autostart = true
 	send_timer.one_shot = false
