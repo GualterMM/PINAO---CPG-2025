@@ -236,7 +236,6 @@ func _on_weapon_no_ammo(current: int, max: int):
 		no_ammo = false
 
 func _on_weapon_jammed(is_jammed: bool):
-	print("Jamed signal!", is_jammed)
 	if(is_jammed):
 		weapon_jammed = true
 	else:

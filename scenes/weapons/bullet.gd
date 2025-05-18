@@ -19,7 +19,6 @@ func _physics_process(delta: float) -> void:
 		queue_free();
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("Body detected: ", body)
 	if (body.has_node("DamageController")):
 		var damage_controller: DamageController = body.find_child("DamageController")
 		damage_controller.take_damage(damage)

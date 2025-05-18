@@ -102,6 +102,7 @@ func move_agent_maintaining_distance(delta: float):
 	move_and_slide()
 	
 func _on_damage_controller_death_signal() -> void:
+	GameState.add_kill_to_count()
 	queue_free()
 	
 func shoot_target(delta: float):

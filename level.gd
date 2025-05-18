@@ -4,6 +4,7 @@ extends Node3D
 @export var vision_obscure: TextureRect
 
 func _ready() -> void:
+	GameState.bind_scene(self)
 	vision_obscure.visible = false
 	var player = get_tree().get_nodes_in_group("player")[0]
 	var damage_controller = player.get_node("DamageController")
@@ -11,7 +12,7 @@ func _ready() -> void:
 	GlobalSabotageManager.sabotage_toggled.connect(_on_sabotage_toggled)
 
 func _on_win_timer_timeout() -> void:
-	print("You win!")
+	print("You won!")
 	show_end_screen(true)
 	
 func _on_player_died() -> void:
