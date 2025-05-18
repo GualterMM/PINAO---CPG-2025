@@ -7,7 +7,7 @@ extends Node
 @export var shotgun_enemy: PackedScene
 @export var sniper_enemy: PackedScene
 @export var max_enemies: int = 50
-@export var seconds_between_spawns = 8
+@export var seconds_between_spawns = 15
 @export var number_enemies_per_spawn = 10
 
 var enemies: Array[PackedScene] = []

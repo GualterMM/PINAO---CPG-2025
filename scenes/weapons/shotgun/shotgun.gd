@@ -15,14 +15,14 @@ enum Faction {
 }
 
 @export var bullet_scene: PackedScene
-@export var damage: float = 1.0
+@export var damage: float = 3.0
 @export var muzzle_speed: int = 30
 @export var seconds_between_shots: float = 0.5
 @export var bullet_despawn_time: float
 @export var ammo_capacity: int = 6
-@export var reload_time: float = 3 # Seconds
+@export var reload_time: float = 2.5 # Seconds
 @export var num_pellets: int = 5;
-@export var spread_angle_degrees: float = 10.0
+@export var spread_angle_degrees: float = 15.0
 @export var fire_mode: FireMode = FireMode.SEMI_AUTO
 
 var current_ammo := ammo_capacity
