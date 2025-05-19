@@ -7,8 +7,8 @@ extends Node3D
 
 var timer = 0;
 
-func _ready() -> void:
-	$Area3D.body_entered.connect(_on_area_3d_body_entered)
+#func _ready() -> void:
+#	$Area3D.body_entered.connect(_on_area_3d_body_entered)
 
 func _physics_process(delta: float) -> void:
 	var forward_direction = global_transform.basis.z.normalized();

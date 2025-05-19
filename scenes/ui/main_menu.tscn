@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvpd125da132b"]
+[gd_scene load_steps=5 format=3 uid="uid://ddof34q87n7kq"]
 
 [ext_resource type="Script" uid="uid://7dcrsksegmkf" path="res://scenes/ui/main_menu.gd" id="1_m1kxf"]
 [ext_resource type="Texture2D" uid="uid://b0uasqswh067w" path="res://scenes/assets/art/Splash_Art_Com_Fundo.png" id="1_sl1te"]

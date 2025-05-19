@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Peace Is Not an Option"
-run/main_scene="uid://bvpd125da132b"
+run/main_scene="uid://ddof34q87n7kq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,10 @@ config/icon="res://icon.svg"
 
 GameState="*res://autoload/game_state.gd"
 GlobalSabotageManager="*res://autoload/sabotage_manager.gd"
-WebsocketManager="*res://autoload/websocket_manager.gd"
+
+[debug]
+
+shapes/navigation/agent_path_color=Color(1, 0, 0, 0)
 
 [filesystem]
 

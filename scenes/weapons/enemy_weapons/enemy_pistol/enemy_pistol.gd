@@ -51,7 +51,7 @@ func shoot():
 	scene_root.add_child(bullet)
 	bullet.global_transform = muzzle.global_transform
 	
-	bullet.look_at(bullet.global_position)
+	# bullet.look_at(bullet.global_position)
 	bullet.speed = muzzle_speed
 	bullet.damage = damage
 
