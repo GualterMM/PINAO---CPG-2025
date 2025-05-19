@@ -159,7 +159,7 @@ func update_weapon_status_panel() -> void:
 			weapon_status_panel.text = "SEM MUNIÇÃO!"
 			return
 		if(weapon_jammed):
-			weapon_status_panel.text = "Arma travada! Recarregue para continuar"
+			weapon_status_panel.text = "Arma travada! Recarregue para destravar"
 			return
 	else:
 		weapon_status_panel.visible = false
