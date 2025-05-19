@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clvskixc2dnuk"]
+[gd_scene load_steps=18 format=3 uid="uid://clvskixc2dnuk"]
 
 [ext_resource type="Script" uid="uid://b84jcpopafvsl" path="res://level.gd" id="1_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://b1h44yr66wwyu" path="res://scenes/ui/user_interface.tscn" id="1_oi3di"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" path="res://level.gdshader" id="5_n6hdu"]
 [ext_resource type="PackedScene" uid="uid://dsv16wi6de16d" path="res://scenes/controllers/enemy_spawn_controller.tscn" id="6_1ainy"]
 [ext_resource type="Texture2D" uid="uid://dsd5mi70ud7ja" path="res://scenes/assets/texture/water.png" id="6_km5ld"]
+[ext_resource type="Script" uid="uid://b3fjohgd2eqtf" path="res://local_web_socket_manager.gd" id="10_8cye3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2txt"]
 
@@ -486,5 +487,8 @@ one_shot = true
 autostart = true
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+
+[node name="Local WebSocket Manager" type="Node" parent="."]
+script = ExtResource("10_8cye3")
 
 [connection signal="timeout" from="Win Timer" to="." method="_on_win_timer_timeout"]

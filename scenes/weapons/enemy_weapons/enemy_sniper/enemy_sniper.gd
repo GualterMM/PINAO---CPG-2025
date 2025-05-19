@@ -51,7 +51,7 @@ func shoot():
 	if "set_faction" in bullet:
 		bullet.set_faction(faction)  # weapon passes its faction
 	
-	bullet.look_at(bullet.global_position)
+	# bullet.look_at(bullet.global_position)
 	bullet.speed = muzzle_speed
 	bullet.damage = damage
 

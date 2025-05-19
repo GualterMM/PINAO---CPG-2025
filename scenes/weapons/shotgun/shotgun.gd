@@ -119,7 +119,7 @@ func _on_reload_timer_timeout() -> void:
 	jammed = false
 	emit_ammo_update()
 	emit_signal("reloading_ended")
-	emit_signal("weapon_jammed", true)
+	emit_signal("weapon_jammed", false)
 	
 func emit_ammo_update():
 	emit_signal("ammo_changed", current_ammo, ammo_capacity)
