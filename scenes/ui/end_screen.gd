@@ -18,7 +18,7 @@ func _ready() -> void:
 	you_label.text = "YOU"
 	won_label.text = "WON!" if is_session_won else "LOST!"
 	
-	points_label.text = "Points: %d" % [GameState.total_points]
+	points_label.text = "Pontos: %d" % [GameState.total_points]
 
 func _on_restart_button_pressed() -> void:
 	GameState.reset_game_state()
