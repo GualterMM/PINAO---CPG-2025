@@ -46,9 +46,11 @@ func _process(_delta: float) -> void:
 					GameState.sabotage_queue = sabotage_queue
 					
 				if(active_sabotages):
-					for sabotage in active_sabotages:
-						if sabotage.has("id"):
-							GlobalSabotageManager.toggle_sabotage(sabotage.id, true)
+					var in_grace_period := (GameState.current_duration <= GameState.grace_duration)
+					if (!in_grace_period):
+						for sabotage in active_sabotages:
+							if sabotage.has("id"):
+								GlobalSabotageManager.toggle_sabotage(sabotage.id, true)
 			
 			print(websocket.get_packet().get_string_from_ascii())
 	elif state == WebSocketPeer.STATE_CLOSING:

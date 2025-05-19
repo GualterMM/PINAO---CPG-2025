@@ -8,7 +8,7 @@ var sabotage_timers: Dictionary = {} # id -> Timer node
 signal sabotage_toggled(id: String, enabled: bool)
 
 @export var sabotage_duration := 10.0
-@export var grace_period_in_millis := 30000.0
+@export var grace_period_in_millis := 20000.0
 
 const SABOTAGES := {
 	"sab_vision_impair": {
@@ -79,5 +79,3 @@ func is_active(id: String) -> bool:
 
 func _on_sabotage_timeout(id: String) -> void:
 	toggle_sabotage(id, false)
-
-	

@@ -6,7 +6,7 @@ var player_name: String = ""
 var game_status: String = "active" # setup | active | paused | over
 var game_duration: int = 0
 var current_duration: int = 0
-var grace_duration: int = 15000
+var grace_duration: int = 20000
 var max_sabotage_limit: int = 3
 var current_sabotage_limit: int = 1
 var can_receive_sabotage: bool = false
@@ -46,7 +46,7 @@ func reset_game_state() -> void:
 	game_status = "active"
 	game_duration = 0
 	current_duration = 0
-	grace_duration = 0
+	grace_duration = 20000
 	max_sabotage_limit = 3
 	current_sabotage_limit = 1
 	can_receive_sabotage = false
