@@ -15,8 +15,8 @@ func _ready() -> void:
 	else:
 		GameState.player_success = false
 	
-	you_label.text = "YOU"
-	won_label.text = "WON!" if is_session_won else "LOST!"
+	you_label.text = "VOCÊ"
+	won_label.text = "VENCEU!" if is_session_won else "PERDEU!"
 	
 	points_label.text = "Pontos: %d" % [GameState.total_points]
 
