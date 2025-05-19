@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://mfr2gf0641cc"]
+[gd_scene load_steps=5 format=3 uid="uid://mfr2gf0641cc"]
 
 [ext_resource type="Script" uid="uid://bjcjlssafwgj" path="res://scenes/ui/end_screen.gd" id="1_4ttpn"]
+[ext_resource type="FontFile" uid="uid://dmxbkaixlpjrr" path="res://scenes/assets/fonts/RubikGlitch-Regular.ttf" id="2_n8r4t"]
+[ext_resource type="FontFile" uid="uid://dyx72niys3jej" path="res://scenes/assets/fonts/Rubik-Bold.ttf" id="2_wgyui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_53v5j"]
 
 [node name="End Screen" type="Control"]
 layout_mode = 3
@@ -25,18 +29,44 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 
 [node name="Result Panel" type="Panel" parent="Aligner/VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxEmpty_53v5j")
 
-[node name="Label" type="Label" parent="Aligner/VBoxContainer/Result Panel"]
+[node name="you_label" type="Label" parent="Aligner/VBoxContainer/Result Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -80.0
+offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You win!"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wgyui")
+theme_override_font_sizes/font_size = 100
+text = "VOCÊ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="won_label" type="Label" parent="Aligner/VBoxContainer/Result Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = 22.0
+offset_right = 43.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.980392, 0, 0.905882, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_n8r4t")
+theme_override_font_sizes/font_size = 100
+text = " GANHOU!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -52,7 +82,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Points: 0"
+text = "Pontos: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -67,7 +97,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Restart Game"
+text = "Recomeçar"
 
 [node name="Quit Panel" type="Panel" parent="Aligner/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
@@ -80,7 +110,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quit Game"
+text = "Sair"
 
 [connection signal="pressed" from="Aligner/VBoxContainer/Restart Panel/Restart Button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Aligner/VBoxContainer/Quit Panel/Quit Button" to="." method="_on_quit_button_pressed"]

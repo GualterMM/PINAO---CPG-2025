@@ -4,11 +4,11 @@ extends CharacterBody3D
 @onready var attack_cooldown_timer: Timer = $"Attack Cooldown Timer"
 
 @export_category("Movement Properties")
-@export var speed := 10.0
-@export var acceleration := 30.0
-@export var min_distance_to_target := 7.0
-@export var buffer_distance := 1.0
-@export var retreat_speed := 2.5
+@export var speed := 99999999999.0
+@export var acceleration := 18.0
+@export var min_distance_to_target := 21.0
+@export var buffer_distance := 3.0
+@export var retreat_speed := 7.5
 
 @export_category("Combat Properties")
 @export var attack_distance := 1.5
@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Attack logic
 	var distance_to_player = global_position.distance_to(target.global_position)
-	print("Distance to player: ", distance_to_player, "Attack Distance: ", attack_distance)
 	if distance_to_player <= attack_distance and can_attack:
 		attack_target()
 		return # Skip movement this frame
@@ -115,7 +114,6 @@ func attack_target():
 	if (!target_damage_controller): 
 		return
 	
-	print("Melee enemy attacking player!")
 	target_damage_controller.take_damage(damage)
 	can_attack = false
 	velocity = Vector3.ZERO # stop movement for this frame
@@ -123,6 +121,7 @@ func attack_target():
 	attack_cooldown_timer.start()
 
 func _on_damage_controller_death_signal() -> void:
+	GameState.add_kill_to_count()
 	queue_free()
 
 func _on_attack_cooldown_timer_timeout() -> void:

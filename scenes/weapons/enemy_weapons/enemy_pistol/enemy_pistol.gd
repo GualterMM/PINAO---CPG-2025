@@ -13,8 +13,9 @@ enum Faction {
 }
 
 @export var bullet_scene: PackedScene
+@export var damage: float = 1
 @export var muzzle_speed: int = 30
-@export var seconds_between_shots: float = 0.2 # Millis
+@export var seconds_between_shots: float = 0.5 # Millis
 @export var ammo_capacity: int = 10
 @export var reload_time: float = 2 # Seconds
 @export var fire_mode: FireMode = FireMode.SEMI_AUTO
@@ -50,8 +51,9 @@ func shoot():
 	scene_root.add_child(bullet)
 	bullet.global_transform = muzzle.global_transform
 	
-	bullet.look_at(bullet.global_position)
+	# bullet.look_at(bullet.global_position)
 	bullet.speed = muzzle_speed
+	bullet.damage = damage
 
 func _on_timer_timeout() -> void:
 	can_shoot = true;

@@ -5,7 +5,7 @@ enum Faction {
 	ENEMY
 }
 
-@onready var hand = $"../Body/Hand";
+@onready var hand = $"../UntitledGoose/Hand";
 
 @export var pistol_scene: PackedScene
 @export var shotgun_scene: PackedScene
@@ -50,10 +50,15 @@ func equip_weapon(weapon_name: String):
 	ammo_ui.connect_weapon(equipped_weapon)
 	
 func switch_weapon(delta: int) -> void:
+	if(GlobalSabotageManager.is_active("sab_weapon_lock")):
+		return
 	current_weapon_index = wrapi(current_weapon_index + delta, 0, weapon_order.size())
 	equip_weapon(weapon_order[current_weapon_index])
 	
 func switch_weapon_by_index(index: int) -> void:
+	if(GlobalSabotageManager.is_active("sab_weapon_lock")):
+		return
+		
 	if (index < 1 or index > 3):
 		return
 	current_weapon_index = index - 1

@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dwinl4cmv7of5"
+path.s3tc="res://.godot/imported/YellowDuck_MallardDuck_BaseColor.png-f82a6341455c79b803f3fa5212acdd1b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1000e73ef244d54f63c3a1381f80ca50"
+}
+
+[deps]
+
+source_file="res://scenes/enemies/shotgun_enemy/YellowDuck_MallardDuck_BaseColor.png"
+dest_files=["res://.godot/imported/YellowDuck_MallardDuck_BaseColor.png-f82a6341455c79b803f3fa5212acdd1b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -4,14 +4,14 @@ extends CharacterBody3D
 @onready var gun_controller: Node = $"AI Gun Controller"
 
 @export_category("Movement Properties")
-@export var speed := 3.0
-@export var acceleration := 5.0
-@export var min_distance_to_target := 7.0
-@export var buffer_distance := 1.0
-@export var retreat_speed := 2.5
+@export var speed := 10.0
+@export var acceleration := 16.0
+@export var min_distance_to_target := 14.0
+@export var buffer_distance := 3.0
+@export var retreat_speed := 8.0
 
 @export_category("Combat Properties")
-@export var shoot_range := 15.0
+@export var shoot_range := 20.0
 @export var shot_cooldown := 1.0
 @export var shoot_timer := 0.0
 
@@ -111,4 +111,5 @@ func shoot_target(delta: float):
 		gun_controller.shoot()
 
 func _on_damage_controller_death_signal() -> void:
+	GameState.add_kill_to_count()
 	queue_free()

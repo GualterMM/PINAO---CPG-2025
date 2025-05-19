@@ -11,7 +11,7 @@ extends CharacterBody3D
 @export var retreat_speed := 2.5
 
 @export_category("Combat Properties")
-@export var shoot_range := 20.0
+@export var shoot_range := 40.0
 @export var shot_cooldown := 4.0
 @export var shoot_timer := 0.0
 
@@ -102,6 +102,7 @@ func move_agent_maintaining_distance(delta: float):
 	move_and_slide()
 	
 func _on_damage_controller_death_signal() -> void:
+	GameState.add_kill_to_count()
 	queue_free()
 	
 func shoot_target(delta: float):

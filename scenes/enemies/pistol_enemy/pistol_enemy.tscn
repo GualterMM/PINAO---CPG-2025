@@ -1,19 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://rexw4r8lg67c"]
+[gd_scene load_steps=11 format=3 uid="uid://rexw4r8lg67c"]
 
 [ext_resource type="Script" uid="uid://ba4s8gax8jr6s" path="res://scenes/enemies/pistol_enemy/pistol_enemy.gd" id="1_0yq2y"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="2_anxvf"]
 [ext_resource type="Script" uid="uid://bg87ya54k8qg4" path="res://scenes/enemies/pistol_enemy/ai_gun_controller.gd" id="3_je4t4"]
 [ext_resource type="PackedScene" uid="uid://cbpbltrmbia3b" path="res://scenes/weapons/enemy_weapons/enemy_pistol/enemy_pistol.tscn" id="4_18g0g"]
+[ext_resource type="PackedScene" uid="uid://dwhski4d00ala" path="res://scenes/enemies/pistol_enemy/WhiteDuck.glb" id="5_2kxma"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xvtp"]
 albedo_color = Color(0.164706, 0.505882, 0.8, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7rg44"]
+radius = 0.05
+height = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8go2"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_eh04s"]
+size = Vector3(0.01, 0.01, 0.01)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k708o"]
 
@@ -34,10 +38,10 @@ skeleton = NodePath("../..")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.426779, 0, -0.762604)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.2587, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_k708o")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_anxvf")]
 max_health_points = 2.0
@@ -46,5 +50,8 @@ points_reward = 150
 [node name="AI Gun Controller" type="Node" parent="."]
 script = ExtResource("3_je4t4")
 pistol_scene = ExtResource("4_18g0g")
+
+[node name="WhiteDuck" parent="." instance=ExtResource("5_2kxma")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0199045, -1.29899, 0.325722)
 
 [connection signal="death_signal" from="DamageController" to="." method="_on_damage_controller_death_signal"]

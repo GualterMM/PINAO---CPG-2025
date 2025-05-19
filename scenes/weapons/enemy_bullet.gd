@@ -1,14 +1,14 @@
 extends Node3D
 
 @export var speed := 70;
-@export var bullet_damage := 1.0
+@export var damage := 1.0
 @export var hit_radius := 0.5
 @export var despawn_time = 2;
 
 var timer = 0;
 
-func _ready() -> void:
-	$Area3D.body_entered.connect(_on_area_3d_body_entered)
+#func _ready() -> void:
+#	$Area3D.body_entered.connect(_on_area_3d_body_entered)
 
 func _physics_process(delta: float) -> void:
 	var forward_direction = global_transform.basis.z.normalized();
@@ -23,6 +23,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 	if (player_node and player_node.is_ancestor_of(body) and body.has_node("DamageController")):
 		var damage_controller: DamageController = body.find_child("DamageController")
-		damage_controller.take_damage(bullet_damage)
+		damage_controller.take_damage(damage)
 		
 	queue_free();
