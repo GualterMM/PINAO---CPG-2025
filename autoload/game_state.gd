@@ -2,7 +2,7 @@ extends Node
 
 # GameState variables
 var session_id: String = "No session ID found :c"
-var player_name: String = "Alpha_Test"
+var player_name: String = get_random_name()
 var game_status: String = "active" # setup | active | paused | over
 var game_duration: int = 0
 var current_duration: int = 0
@@ -113,3 +113,13 @@ func get_payload() -> String:
 		}
 	
 	return JSON.stringify(payload)
+
+func get_random_name() -> String:
+	var result: String
+	randomize()
+	var random_digits = ""
+		
+	for i in 4:
+		result = "Anonymous-" + random_digits
+	
+	return result

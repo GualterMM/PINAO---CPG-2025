@@ -37,7 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.51142, 0, 0, 0.373419)
 shape = SubResource("CapsuleShape3D_lq62i")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="DamageController" parent="." instance=ExtResource("2_lq62i")]
 max_health_points = 4.0
