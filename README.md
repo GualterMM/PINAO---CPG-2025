@@ -50,8 +50,6 @@ These are the amazing people that developed the game during the game jam through
             <li>Game server programmer</li>
         </ul>
     </td>
-  </tr>
-  <tr>
     <td>
         <ul>
             <li>Game artist</li>
@@ -59,8 +57,6 @@ These are the amazing people that developed the game during the game jam through
             <li>3D assets and shader code</li>
         </ul>
     </td>
-  </tr>
-  <tr>
     <td>
         <ul>
             <li>Frontend sabotage platform developer</li>
@@ -68,8 +64,6 @@ These are the amazing people that developed the game during the game jam through
             <li>Mobile platforms compatibility</li>
         </ul>
     </td>
-  </tr>
-  <tr>
     <td>
         <ul>
             <li>Game design and QA</li>
