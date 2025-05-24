@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgwetw6ylam67"]
+
+[ext_resource type="Script" uid="uid://xod8dm2vymki" path="res://modular_weapon.gd" id="1_83uh5"]
+
+[node name="Modular Weapon Node" type="Node3D"]
+script = ExtResource("1_83uh5")
+"Firing Mode Properties/Firing Mode" = 0
+"Firing Mode Properties/Bullet Deviation Angle" = 0.0
+"Projectile Mode Properties/Projectile Mode" = 0
+
+[node name="Muzzle" type="Marker3D" parent="."]
+
+[node name="Reload Timer" type="Timer" parent="."]
+
+[node name="ROF Timer" type="Timer" parent="."]
+wait_time = inf
+
+[connection signal="timeout" from="Reload Timer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="ROF Timer" to="." method="_on_rof_timer_timeout"]

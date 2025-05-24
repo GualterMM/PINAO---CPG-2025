@@ -59,7 +59,7 @@ func _process(_delta: float) -> void:
 		print("Connecting to WebSocket server...")
 	elif state == WebSocketPeer.STATE_CLOSED:
 		var code = websocket.get_close_code()
-		print("WebSocket closed with code: %d. Clean: %s" % [code, code != -1])
+		# print("WebSocket closed with code: %d. Clean: %s" % [code, code != -1])
 		
 func _on_send_timer_timeout():
 	var json_msg := GameState.get_payload()

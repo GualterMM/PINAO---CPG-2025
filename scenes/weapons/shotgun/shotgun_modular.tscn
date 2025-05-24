@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://h6xgu4cuyu6c"]
+
+[ext_resource type="Script" uid="uid://xod8dm2vymki" path="res://modular_weapon.gd" id="1_gdp4o"]
+[ext_resource type="PackedScene" uid="uid://44iglr26rhs8" path="res://scenes/weapons/bullet.tscn" id="2_44fcx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wur0n"]
+albedo_color = Color(0.501961, 0.290196, 0.105882, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ll5uh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ph3d6"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dw2pe"]
+albedo_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ph3d6"]
+material = SubResource("StandardMaterial3D_dw2pe")
+
+[node name="Shotgun" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_gdp4o")
+base_weapon_name = "Shotgun"
+base_rate_of_fire = 200
+base_max_ammo_loaded = 6
+base_max_ammo_reserve = 30
+base_reload_duration = 3.0
+bullet_scene = ExtResource("2_44fcx")
+bullet_damage = 2.0
+bullet_speed = 45.0
+bullet_lifetime = 0.5
+"Firing Mode Properties/Firing Mode" = 2
+"Firing Mode Properties/Bullet Deviation Angle" = 0.0
+"Firing Mode Properties/Bullets Per Burst" = 2
+"Firing Mode Properties/Delay Per Bullet In Burst" = 100.0
+"Projectile Mode Properties/Projectile Mode" = 1
+"Projectile Mode Properties/Bullet Per Pellet" = 3
+"Projectile Mode Properties/Pellet Deviation Angle" = 15.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.213868, 0, 0)
+material_override = SubResource("StandardMaterial3D_wur0n")
+mesh = SubResource("BoxMesh_ll5uh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.12941, -0.289778, 0, 0.482963, 0.0776457, 0, 0, 0, 0.21, -0.303627, -0.315367, -0.000730634)
+material_override = SubResource("StandardMaterial3D_ph3d6")
+mesh = SubResource("BoxMesh_ll5uh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 0.0707107, -0.0707107, 0, 0.0707107, 0.0707107, 0.785769, 0, 0.0720429)
+mesh = SubResource("BoxMesh_ph3d6")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 0.0707107, -0.0707107, 0, 0.0707107, 0.0707107, 0.785769, 0, -0.07516)
+mesh = SubResource("BoxMesh_ph3d6")
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.55547, 0, -2.25805e-08)
+
+[node name="ROF Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Reload Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="ROF Timer" to="." method="_on_rof_timer_timeout"]
+[connection signal="timeout" from="Reload Timer" to="." method="_on_reload_timer_timeout"]

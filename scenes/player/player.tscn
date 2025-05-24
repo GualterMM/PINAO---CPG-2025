@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://cm8180w2tuiho"]
 
 [ext_resource type="Script" uid="uid://0hu7hophl6a6" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="PackedScene" uid="uid://b1thcv0dfeh50" path="res://scenes/weapons/pistol/pistol_modular.tscn" id="3_0owmy"]
 [ext_resource type="Script" uid="uid://04g0nehghe26" path="res://scenes/player/gun_controller.gd" id="3_gmlin"]
-[ext_resource type="PackedScene" uid="uid://vdxumac540ee" path="res://scenes/weapons/pistol/pistol.tscn" id="3_lvxji"]
-[ext_resource type="PackedScene" uid="uid://0ima2eqmyjbq" path="res://scenes/weapons/shotgun/shotgun.tscn" id="4_p47bc"]
-[ext_resource type="PackedScene" uid="uid://cgggp80v856m2" path="res://scenes/weapons/rifle/rifle.tscn" id="5_p47bc"]
+[ext_resource type="PackedScene" uid="uid://h6xgu4cuyu6c" path="res://scenes/weapons/shotgun/shotgun_modular.tscn" id="4_0owmy"]
+[ext_resource type="PackedScene" uid="uid://dwv02kw8juh4j" path="res://scenes/weapons/rifle/rifle_modular.tscn" id="5_0owmy"]
 [ext_resource type="PackedScene" uid="uid://wh1d0imuj6y" path="res://scenes/controllers/damage_controller.tscn" id="6_75vfm"]
 [ext_resource type="PackedScene" uid="uid://cehgx4qryrpet" path="res://scenes/player/UntitledGoose.glb" id="7_0owmy"]
 
@@ -49,9 +49,9 @@ shape = SubResource("CapsuleShape3D_u52ul")
 
 [node name="Gun Controller" type="Node" parent="."]
 script = ExtResource("3_gmlin")
-pistol_scene = ExtResource("3_lvxji")
-shotgun_scene = ExtResource("4_p47bc")
-rifle_scene = ExtResource("5_p47bc")
+pistol_scene = ExtResource("3_0owmy")
+shotgun_scene = ExtResource("4_0owmy")
+rifle_scene = ExtResource("5_0owmy")
 
 [node name="DamageController" parent="." instance=ExtResource("6_75vfm")]
 max_health_points = 10.0

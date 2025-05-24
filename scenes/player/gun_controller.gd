@@ -72,14 +72,14 @@ func request_trigger_pressed():
 	if not equipped_weapon or not "fire_mode" in equipped_weapon:
 		return
 	
-	if equipped_weapon.fire_mode == equipped_weapon.FireMode.SEMI_AUTO:
+	if equipped_weapon.fire_mode == equipped_weapon.FiringMode.SEMI_AUTO || equipped_weapon.fire_mode == equipped_weapon.FiringMode.BURST_FIRE:
 		equipped_weapon.shoot()
 		
 func request_trigger_held():
 	if not equipped_weapon or not "fire_mode" in equipped_weapon:
 		return
 	
-	if equipped_weapon.fire_mode == equipped_weapon.FireMode.FULL_AUTO:
+	if equipped_weapon.fire_mode == equipped_weapon.FiringMode.FULL_AUTO:
 		equipped_weapon.shoot()
 		
 func request_trigger_released():

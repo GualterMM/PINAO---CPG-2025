@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1thcv0dfeh50"]
+
+[ext_resource type="Script" uid="uid://xod8dm2vymki" path="res://modular_weapon.gd" id="1_gye0y"]
+[ext_resource type="PackedScene" uid="uid://44iglr26rhs8" path="res://scenes/weapons/bullet.tscn" id="2_gqm0r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wvto"]
+albedo_color = Color(0.151276, 0.151276, 0.151276, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_4jni1"]
+
+[node name="Pistol" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_gye0y")
+base_weapon_name = "Pistol"
+base_rate_of_fire = 300
+base_max_ammo_loaded = 10
+base_max_ammo_reserve = -1
+base_reload_duration = 2.0
+bullet_scene = ExtResource("2_gqm0r")
+bullet_damage = 1.0
+bullet_speed = 30.0
+bullet_lifetime = 2.0
+"Firing Mode Properties/Firing Mode" = 0
+"Firing Mode Properties/Bullet Deviation Angle" = 0.0
+"Projectile Mode Properties/Projectile Mode" = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8wvto")
+mesh = SubResource("BoxMesh_4jni1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.12941, -0.289778, 0, 0.482963, 0.0776457, 0, 0, 0, 0.21, -0.303668, -0.318475, 0)
+material_override = SubResource("StandardMaterial3D_8wvto")
+mesh = SubResource("BoxMesh_4jni1")
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.516582, 0, -2.25805e-08)
+
+[node name="ROF Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Reload Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="ROF Timer" to="." method="_on_rof_timer_timeout"]
+[connection signal="timeout" from="Reload Timer" to="." method="_on_reload_timer_timeout"]
